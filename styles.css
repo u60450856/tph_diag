@@ -79,10 +79,11 @@ button {
 }
 
 .illness{
-  flex-basis: 19%;
-  padding-left: 40px;
-  min-height: 44px;
+  flex-basis: 16%;
+  padding: 4px 4px 4px 44px ;
+  min-height: 36px;
   line-height: 1;
+  margin: 4px;
 }
 .illness {
   border: solid 1px;
