@@ -82,6 +82,7 @@ button {
   flex-basis: 20%;
 }
 
+.illness .icon        {display:inline-block;width:36px;height:36px;}
 .illness .icon.GP     {background: url(IMAGES/ROOMS/GP.png) no-repeat center center transpaent;}
 .illness .icon.GD     {background: url(IMAGES/ROOMS/GD.png) no-repeat center center transpaent;}
 .illness .icon.CARDIO {background: url(IMAGES/ROOMS/CARDIO.png) no-repeat center center transpaent;}
