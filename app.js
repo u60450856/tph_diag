@@ -80,6 +80,7 @@ let APP = (function(init) {
     dataUrls.forEach((data)=>{
            fetch(_options.dataUrls[data])
            .then((response)=>{
+            console.log(response);
               let cth = response.headers.get("content-type");
               if(cth && cth.includes("application/json")) {
                 return response.json();
