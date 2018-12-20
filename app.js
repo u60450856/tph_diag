@@ -159,7 +159,7 @@ let APP = (function(init) {
     console.log(_data.values);
     return _data.values['illnesses']
            .reduce((theme,illness)=>{
-                     return theme + _themeIllness(ilness);
+                     return theme + _themeIllness(illness);
                   },tplIllnessList);
   };
 
