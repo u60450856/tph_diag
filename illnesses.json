@@ -185,11 +185,6 @@
   "diag":{"GP":0.10,"GD":0.09,"CARDIO":0.09,"WARD":0.09,"PSY":0.20,"FLUID":0.09,"XRAY":0.09,"MEGA":0.20,"DNA":0.40,"GP2":0.08,"TREAT":0.20}
 },
 {
-  "name":"Grey Anatomy",
-  "room":"CHROMA",
-  "diag":{"GP":0.50,"GD":0.20,"CARDIO":0.20,"WARD":0.17,"PSY":0.07,"FLUID":0.45,"XRAY":0.17,"MEGA":0.30,"DNA":0.17,"GP2":0.10  ,"TREAT":0.60}
-},
-{
   "name":"Gurning Loins",
   "room":"SURGERY",
   "diag":{"GP":0.15,"GD":0.20,"CARDIO":0.07,"WARD":0.07,"PSY":0.07,"FLUID":0.10,"XRAY":0.10,"MEGA":0.15,"DNA":0.10,"GP2":0.075 ,"TREAT":0.20}
@@ -208,6 +203,11 @@
   "name":"Spinal Bap",
   "room":"SURGERY",
   "diag":{"GP":0.45,"GD":0.08,"CARDIO":0.25,"WARD":0.08,"PSY":0.08,"FLUID":0.18,"XRAY":0.18,"MEGA":0.18,"DNA":0.15,"GP2":0.1125,"TREAT":0.70}
+},
+{
+  "name":"Grey Anatomy",
+  "room":"CHROMA",
+  "diag":{"GP":0.50,"GD":0.20,"CARDIO":0.20,"WARD":0.17,"PSY":0.07,"FLUID":0.45,"XRAY":0.17,"MEGA":0.30,"DNA":0.17,"GP2":0.10  ,"TREAT":0.60}
 },
 {
   "name":"Jest Infection",
