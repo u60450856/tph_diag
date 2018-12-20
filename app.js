@@ -86,7 +86,8 @@ let APP = (function(init) {
             })// then
            .then((json)=>{
             console.log(json);
-              _data.values[data]=JSON.parse(json);
+              _data.values[data]=json;
+              //_data.values[data]=JSON.parse(json);
               _data.ready=(Object.keys(_data.values).length==dataUrls.length);
             })// then
            .catch((error)=>{
