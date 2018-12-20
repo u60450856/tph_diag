@@ -81,8 +81,10 @@ let APP = (function(init) {
            fetch(_options.dataUrls[data])
            .then((response)=>{
               let cth = response.headers.get("content-type");
-              if(cth && cth.includes("application/json")) {return response.json();}
-              throw new TypeError("Oops, we haven't got JSON!");
+              if(cth && cth.includes("application/json")) {
+                return response.json();
+              }
+              //throw new TypeError("Oops, we haven't got JSON!");
             })// then
            .then((json)=>{
               _data.values[data]=json;
