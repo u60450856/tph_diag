@@ -78,6 +78,7 @@ button {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
 .illness{
   flex-basis: 20%;
 }
