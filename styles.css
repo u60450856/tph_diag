@@ -82,7 +82,6 @@ button {
 .illness{
   flex-basis: 20%;
 }
-
 .illness .icon        {display:inline-block;width:36px;height:36px;}
 /* DIAGNOSIS ROOMS*/
 .illness .icon        {background-repeat: no-repeat;
@@ -109,7 +108,7 @@ button {
 .illness .icon.PANS     {background-image: url(/IMAGES/ROOMS/PANS.png);}
 .illness .icon.PEST     {background-image: url(/IMAGES/ROOMS/PEST.png);}
 .illness .icon.PHARMA   {background-image: url(/IMAGES/ROOMS/PHARMA.png);}
-.illness .icon.RECURVE  {background-image: url(/IMAGES/ROOMS/RECURVE.png);}
+.illness .icon.RECURVE  {background-image: url(IMAGES/ROOMS/RECURVE.png);}
 .illness .icon.RES      {background-image: url(/IMAGES/ROOMS/RES.png);}
 .illness .icon.SHOCK    {background-image: url(/IMAGES/ROOMS/SHOCK.png);}
 .illness .icon.SURGERY  {background-image: url(/IMAGES/ROOMS/SURGERY.png);}
