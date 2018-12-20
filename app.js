@@ -156,7 +156,7 @@ let APP = (function(init) {
               tplIllnessList = p.innerHTML; 
             }
           }
-    return _data.values['Illnesses']
+    return _data.values['illnesses']
            .reduce((theme,illness)=>{
                      return theme + _themeIllness(ilness);
                   },tplIllnessList);
