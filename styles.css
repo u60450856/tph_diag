@@ -84,14 +84,31 @@ button {
 }
 
 .illness .icon        {display:inline-block;width:36px;height:36px;}
-.illness .icon.GP     {background: url(/IMAGES/ROOMS/GP.png) no-repeat center center transpaent;}
-.illness .icon.GD     {background: url(/IMAGES/ROOMS/GD.png) no-repeat center center transpaent;}
-.illness .icon.CARDIO {background: url(/IMAGES/ROOMS/CARDIO.png) no-repeat center center transpaent;}
-.illness .icon.WARD   {background: url(/IMAGES/ROOMS/WARD.png) no-repeat center center transpaent;}
-.illness .icon.PSY    {background: url(/IMAGES/ROOMS/PSY.png) no-repeat center center transpaent;}
-.illness .icon.FLUID  {background: url(/IMAGES/ROOMS/FLUID.png) no-repeat center center transpaent;}
-.illness .icon.XRAY   {background: url(/IMAGES/ROOMS/XRAY.png) no-repeat center center transpaent;}
-.illness .icon.MEGA0  {background: url(/IMAGES/ROOMS/MEGA0.png) no-repeat center center transpaent;}
-.illness .icon.DNA    {background: url(/IMAGES/ROOMS/DNA.png) no-repeat center center transpaent;}
-.illness .icon.GP2    {background: url(/IMAGES/ROOMS/GP2.png) no-repeat center center transpaent;}
-.illness .icon.TREAT  {background: url(/IMAGES/ROOMS/TREAT.png) no-repeat center center transpaent;}
+/* DIAGNOSIS ROOMS*/
+.illness .icon     {background-repeat: no-repeat;background-attachment: center center; background-color: transpaent;}
+.illness .icon.GP     {background-image: url(/IMAGES/ROOMS/GP.png);}
+.illness .icon.GD     {background-image: url(/IMAGES/ROOMS/GD.png);}
+.illness .icon.CARDIO {background-image: url(/IMAGES/ROOMS/CARDIO.png);}
+.illness .icon.WARD   {background-image: url(/IMAGES/ROOMS/WARD.png);}
+.illness .icon.PSY    {background-image: url(/IMAGES/ROOMS/PSY.png);}
+.illness .icon.FLUID  {background-image: url(/IMAGES/ROOMS/FLUID.png);}
+.illness .icon.XRAY   {background-image: url(/IMAGES/ROOMS/XRAY.png);}
+.illness .icon.MEGA   {background-image: url(/IMAGES/ROOMS/MEGA0.png);}
+.illness .icon.DNA    {background-image: url(/IMAGES/ROOMS/DNA.png);}
+.illness .icon.GP2    {background-image: url(/IMAGES/ROOMS/GP2.png);}
+.illness .icon.TREAT  {background-image: url(/IMAGES/ROOMS/TREAT.png);}
+/* OTHER ROOMS*/
+.illness .icon.CHROMA   {background-image: url(/IMAGES/ROOMS/CHROMA.png);}
+.illness .icon.CLOWN    {background-image: url(/IMAGES/ROOMS/CLOWN.png);}
+.illness .icon.CRYPTO   {background-image: url(/IMAGES/ROOMS/CRYPTO.png);}
+.illness .icon.DELUX    {background-image: url(/IMAGES/ROOMS/DELUX.png);}
+.illness .icon.FRACTURE {background-image: url(/IMAGES/ROOMS/FRACTURE.png);}
+.illness .icon.INJECTION{background-image: url(/IMAGES/ROOMS/INJECTION.png);}
+.illness .icon.PANS     {background-image: url(/IMAGES/ROOMS/PANS.png);}
+.illness .icon.PEST     {background-image: url(/IMAGES/ROOMS/PEST.png);}
+.illness .icon.PHARMA   {background-image: url(/IMAGES/ROOMS/PHARMA.png);}
+.illness .icon.RECURVE  {background-image: url(/IMAGES/ROOMS/RECURVE.png);}
+.illness .icon.RES      {background-image: url(/IMAGES/ROOMS/RES.png);}
+.illness .icon.SHOCK    {background-image: url(/IMAGES/ROOMS/SHOCK.png);}
+.illness .icon.SURGERY  {background-image: url(/IMAGES/ROOMS/SURGERY.png);}
+.illness .icon.TURTLE   {background-image: url(/IMAGES/ROOMS/TURTLE.png);}
