@@ -80,14 +80,12 @@ button {
 
 .illness{
   flex-basis: 19%;
-  vertical-align: middle;
   padding-left: 40px;
-  padding-top: 4px;
   min-height: 44px;
 }
 /* DIAGNOSIS ROOMS*/
 .room.icon          {background-repeat: no-repeat;
-                     background-position: left, center;
+                     background-position: left, 4px;
                      background-color: transparent;}
 .room.icon.GP       {background-image: url(image/room/GP.png);}
 .room.icon.GD       {background-image: url(image/room/GD.png);}
