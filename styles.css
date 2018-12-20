@@ -86,7 +86,7 @@ button {
 }
 /* DIAGNOSIS ROOMS*/
 .room.icon          {background-repeat: no-repeat;
-                     background-position: left -4px;
+                     background-position: left center;
                      background-color: transparent;}
 .room.icon.GP       {background-image: url(image/room/GP.png);}
 .room.icon.GD       {background-image: url(image/room/GD.png);}
