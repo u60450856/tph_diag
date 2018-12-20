@@ -89,7 +89,7 @@ let APP = (function(init) {
             })// then
            .then((json)=>{
               _data.values[data]=json;
-//              _data.ready=(Object.keys(_data.values).length==dataUrls.length);
+              _data.ready=(Object.keys(_data.values).length==dataUrls.length);
             })// then
            .catch((error)=>{
               console.log(error);
@@ -100,6 +100,7 @@ let APP = (function(init) {
   const _waitData = function(start, callback){
     let t;
     let c = function(){
+      console.log(_data.ready);
       clearTimeout(t);
       if(_data.ready){
         callback()
