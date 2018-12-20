@@ -1,0 +1,74 @@
+body {
+	background-color: rgb(48,48,48);
+	color: rgb(197,214,190);
+  font-family: monospace, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+h2 {
+  margin: 1em 0 0;
+  color  : rgb(180,180,180);  
+}
+input,
+button {
+  display: inline-block;
+  padding: 6px 10px;
+	font-size: 24px;
+  line-height: normal;
+  box-sizing: border-box;
+}
+input {
+  width: 520px; 
+}
+button {
+  float: right;
+  width: 100px; 
+}
+input {
+  background-color: rgb(197,214,190);
+  color: rgb(48,48,48);
+  border: 2px solid rgb(24,24,24);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+button {
+  background-color: rgb(68, 68, 68);
+  border: 1px solid rgb(164, 164, 164);
+  color: rgb(190, 190, 190);  
+}
+.hidden {
+  display: none;
+}
+#main {
+  width: 640px; margin: 0 auto;
+}
+#searchForm{
+  margin-bottom: 1em;
+}
+#searchResult {}
+#searchResultItems {
+  display: table; width: 100%;
+  counter-reset: searchResult;
+}
+#searchResultItems .item {
+  display: table-row;
+  counter-increment: searchResult;  
+}
+#searchResultItems .item span {
+  display: table-cell;
+  font-weight: bold;
+  padding: 0.25em 0;
+}
+#searchResultItems .item span.title:before {
+  display: inline-block;
+  content: counter(searchResult) ". ";
+  width  : 8ex;
+  color  : rgb(164,164,164);
+}
+#searchResultItems .item span.title {
+  letter-spacing: 2px;
+}
+#searchResultItems .item span.box   {
+  text-align: right;
+  color: rgb(214,197,48);
+}

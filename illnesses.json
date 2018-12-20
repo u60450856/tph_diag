@@ -1,0 +1,257 @@
+[
+{
+  "name":"8-bitten",
+  "room":"RES",
+  "diag":{"GP":0.30,"GD":0.31,"CARDIO":0.21,"WARD":0.11,"PSY":0.13,"FLUID":0.13,"XRAY":0.13,"MEGA":0.12,"DNA":0.13,"GP2":0.109 ,"TREAT":0.51}
+},
+{
+  "name":"Animal Magnetism",
+  "room":"PEST",
+  "diag":{"GP":0.80,"GD":0.12,"CARDIO":0.49,"WARD":0.07,"PSY":0.07,"FLUID":0.12,"XRAY":0.12,"MEGA":0.45,"DNA":0.45,"GP2":0.16  ,"TREAT":0.60}
+},
+{
+  "name":"Bed Face",
+  "room":"WARD",
+  "diag":{"GP":0.85,"GD":0.20,"CARDIO":0.20,"WARD":0.20,"PSY":0.05,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.2125,"TREAT":0.80}
+},
+{
+  "name":"Boggled Mind",
+  "room":"PSY",
+  "diag":{"GP":0.35,"GD":0.15,"CARDIO":0.15,"WARD":0.30,"PSY":0.15,"FLUID":0.15,"XRAY":0.30,"MEGA":0.30,"DNA":0.30,"GP2":0.0875,"TREAT":0.40}
+},
+{
+  "name":"Bogwarts",
+  "room":"PHARMA",
+  "diag":{"GP":0.60,"GD":0.35,"CARDIO":0.22,"WARD":0.07,"PSY":0.22,"FLUID":0.22,"XRAY":0.22,"MEGA":0.22,"DNA":0.22,"GP2":0.15  ,"TREAT":0.60}
+},
+{
+  "name":"Broken Face",
+  "room":"FRACTURE",
+  "diag":{"GP":0.50,"GD":0.15,"CARDIO":0.25,"WARD":0.15,"PSY":0.15,"FLUID":0.25,"XRAY":0.15,"MEGA":0.25,"DNA":0.15,"GP2":0.05  ,"TREAT":0.50}
+},
+{
+  "name":"Clamp",
+  "room":"PHARMA",
+  "diag":{"GP":10.0,"GD":1.00,"CARDIO":1.00,"WARD":1.00,"PSY":1.00,"FLUID":1.00,"XRAY":1.00,"MEGA":1.00,"DNA":1.00,"GP2":1.007 ,"TREAT":0.90}
+},
+{
+  "name":"Cross Bones",
+  "room":"FRACTURE",
+  "diag":{"GP":0.25,"GD":0.12,"CARDIO":0.07,"WARD":0.12,"PSY":0.42,"FLUID":0.12,"XRAY":0.40,"MEGA":0.40,"DNA":0.12,"GP2":0.05  ,"TREAT":0.40}
+},
+{
+  "name":"Cubism",
+  "room":"RECURVERY",
+  "diag":{"GP":0.28,"GD":0.10,"CARDIO":0.10,"WARD":0.10,"PSY":0.10,"FLUID":0.45,"XRAY":0.45,"MEGA":0.45,"DNA":0.45,"GP2":0.084 ,"TREAT":0.50}
+},
+{
+  "name":"Decision Rash",
+  "room":"INJECTION",
+  "diag":{"GP":0.40,"GD":0.07,"CARDIO":0.20,"WARD":0.12,"PSY":0.12,"FLUID":0.30,"XRAY":0.12,"MEGA":0.15,"DNA":0.12,"GP2":0.048 ,"TREAT":0.40}
+},
+{
+  "name":"Denim Genes",
+  "room":"DNA",
+  "diag":{"GP":0.25,"GD":0.10,"CARDIO":0.10,"WARD":0.10,"PSY":0.10,"FLUID":0.25,"XRAY":0.10,"MEGA":0.25,"DNA":0.25,"GP2":0.10  ,"TREAT":0.60}
+},
+{
+  "name":"Emperor Complex",
+  "room":"PSY",
+  "diag":{"GP":0.20,"GD":0.12,"CARDIO":0.20,"WARD":0.12,"PSY":0.12,"FLUID":0.12,"XRAY":0.20,"MEGA":0.20,"DNA":0.25,"GP2":0.10  ,"TREAT":0.30}
+},
+{
+  "name":"Floppy Discs",
+  "room":"SURGERY",
+  "diag":{"GP":0.45,"GD":0.08,"CARDIO":0.08,"WARD":0.20,"PSY":0.08,"FLUID":0.18,"XRAY":0.45,"MEGA":0.45,"DNA":0.15,"GP2":0.09  ,"TREAT":0.60}
+},
+{
+  "name":"Flumps",
+  "room":"DNA",
+  "diag":{"GP":0.25,"GD":0.10,"CARDIO":0.28,"WARD":0.10,"PSY":0.10,"FLUID":0.10,"XRAY":0.10,"MEGA":0.28,"DNA":0.28,"GP2":0.10  ,"TREAT":0.50}
+},
+{
+  "name":"Freudian Lips",
+  "room":"PSY",
+  "diag":{"GP":0.55,"GD":0.15,"CARDIO":0.40,"WARD":0.15,"PSY":0.20,"FLUID":0.15,"XRAY":0.15,"MEGA":0.15,"DNA":0.15,"GP2":0.11  ,"TREAT":0.70}
+},
+{
+  "name":"Grey Anatomy",
+  "room":"CHROMA",
+  "diag":{"GP":0.50,"GD":0.20,"CARDIO":0.20,"WARD":0.17,"PSY":0.07,"FLUID":0.45,"XRAY":0.17,"MEGA":0.30,"DNA":0.17,"GP2":0.10  ,"TREAT":0.60}
+},
+{
+  "name":"Grout",
+  "room":"PHARMA",
+  "diag":{"GP":10.0,"GD":1.00,"CARDIO":1.00,"WARD":1.00,"PSY":1.00,"FLUID":1.00,"XRAY":1.00,"MEGA":1.00,"DNA":1.00,"GP2":1.00  ,"TREAT":1.00}
+},
+{
+  "name":"Gurning Loins",
+  "room":"SURGERY",
+  "diag":{"GP":0.15,"GD":0.20,"CARDIO":0.07,"WARD":0.07,"PSY":0.07,"FLUID":0.10,"XRAY":0.10,"MEGA":0.15,"DNA":0.10,"GP2":0.075 ,"TREAT":0.20}
+},
+{
+  "name":"Heart Throb",
+  "room":"SURGERY",
+  "diag":{"GP":0.25,"GD":0.10,"CARDIO":0.20,"WARD":0.10,"PSY":0.05,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.10  ,"TREAT":0.40}
+},
+{
+  "name":"Humerus Injury",
+  "room":"FRACTURE",
+  "diag":{"GP":0.90,"GD":0.20,"CARDIO":0.07,"WARD":0.20,"PSY":0.20,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.225 ,"TREAT":0.80}
+},
+{
+  "name":"Hurty Leg",
+  "room":"FRACTURE",
+  "diag":{"GP":0.60,"GD":0.30,"CARDIO":0.07,"WARD":0.18,"PSY":0.18,"FLUID":0.18,"XRAY":0.30,"MEGA":0.30,"DNA":0.18,"GP2":0.132 ,"TREAT":0.70}
+},
+{
+  "name":"Inflated Ego",
+  "room":"PSY",
+  "diag":{"GP":0.40,"GD":0.15,"CARDIO":0.15,"WARD":0.15,"PSY":0.15,"FLUID":0.40,"XRAY":0.15,"MEGA":0.15,"DNA":0.15,"GP2":0.10,"TREAT":0.50}
+},
+{
+  "name":"Jazz Hand",
+  "room":"WARD",
+  "diag":{"GP":0.15,"GD":0.10,"CARDIO":0.10,"WARD":0.30,"PSY":0.10,"FLUID":0.10,"XRAY":0.45,"MEGA":0.45,"DNA":0.10,"GP2":0.1125,"TREAT":0.30}
+},
+{
+  "name":"Jest Infection",
+  "room":"CLOWN",
+  "diag":{"GP":0.60,"GD":0.20,"CARDIO":0.20,"WARD":0.15,"PSY":0.35,"FLUID":0.15,"XRAY":0.35,"MEGA":0.15,"DNA":0.35,"GP2":0.6,"TREAT":0.60}
+},
+{
+  "name":"Jumbo DNA",
+  "room":"DNA",
+  "diag":{"GP":0.15,"GD":0.10,"CARDIO":0.10,"WARD":0.10,"PSY":0.10,"FLUID":0.25,"XRAY":0.10,"MEGA":0.40,"DNA":0.10,"GP2":0.9,"TREAT":0.30}
+},
+{
+  "name":"Lazy Bones",
+  "room":"WARD",
+  "diag":{"GP":0.80,"GD":0.20,"CARDIO":0.22,"WARD":0.20,"PSY":0.05,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.12,"TREAT":0.70}
+},
+{
+  "name":"Leopard Skin",
+  "room":"DNA",
+  "diag":{"GP":0.25,"GD":0.10,"CARDIO":0.10,"WARD":0.10,"PSY":0.10,"FLUID":0.25,"XRAY":0.25,"MEGA":0.10,"DNA":0.25,"GP2":0.10,"TREAT":0.40}
+},
+{
+  "name":"Lightheadedness",
+  "room":"DELUX",
+  "diag":{"GP":0.90,"GD":0.15,"CARDIO":0.15,"WARD":0.15,"PSY":0.15,"FLUID":0.15,"XRAY":0.15,"MEGA":0.15,"DNA":0.15,"GP2":0.9,"TREAT":0.80}
+},
+{
+  "name":"Litter Bug",
+  "room":"INJECTION",
+  "diag":{"GP":0.45,"GD":0.15,"CARDIO":0.15,"WARD":0.07,"PSY":0.07,"FLUID":0.35,"XRAY":0.18,"MEGA":0.15,"DNA":0.15,"GP2":0.1125,"TREAT":0.50}
+},
+{
+  "name":"Lycanthropy",
+  "room":"PHARMA",
+  "diag":{"GP":0.30,"GD":0.05,"CARDIO":0.41,"WARD":0.05,"PSY":0.20,"FLUID":0.41,"XRAY":0.05,"MEGA":0.05,"DNA":0.05,"GP2":0.03,"TREAT":0.30}
+},
+{
+  "name":"Mime Crisis",
+  "room":"PSY",
+  "diag":{"GP":0.45,"GD":0.18,"CARDIO":0.30,"WARD":0.18,"PSY":0.30,"FLUID":0.30,"XRAY":0.18,"MEGA":0.18,"DNA":0.18,"GP2":0.09,"TREAT":0.60}
+},
+{
+  "name":"Misery Guts",
+  "room":"PHARMA",
+  "diag":{"GP":0.60,"GD":0.20,"CARDIO":0.30,"WARD":0.20,"PSY":0.20,"FLUID":0.25,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.12,"TREAT":0.50}
+},
+{
+  "name":"Mock Star",
+  "room":"PSY",
+  "diag":{"GP":0.90,"GD":0.20,"CARDIO":0.20,"WARD":0.20,"PSY":0.20,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.315,"TREAT":0.80}
+},
+{
+  "name":"Monobrow",
+  "room":"WARD",
+  "diag":{"GP":0.40,"GD":0.15,"CARDIO":0.15,"WARD":0.20,"PSY":0.15,"FLUID":0.15,"XRAY":0.20,"MEGA":0.20,"DNA":0.15,"GP2":0.10,"TREAT":0.50}
+},
+{
+  "name":"Mood Poisoning",
+  "room":"INJECTION",
+  "diag":{"GP":0.80,"GD":0.20,"CARDIO":0.20,"WARD":0.07,"PSY":0.07,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.16,"TREAT":0.70}
+},
+{
+  "name":"Mucky Feet",
+  "room":"WARD",
+  "diag":{"GP":0.35,"GD":0.20,"CARDIO":0.20,"WARD":0.20,"PSY":0.20,"FLUID":0.20,"XRAY":0.25,"MEGA":0.20,"DNA":0.25,"GP2":0.875,"TREAT":0.40}
+},
+{
+  "name":"Night Fever",
+  "room":"PSY",
+  "diag":{"GP":0.50,"GD":0.30,"CARDIO":0.15,"WARD":0.15,"PSY":0.30,"FLUID":0.30,"XRAY":0.15,"MEGA":0.15,"DNA":0.15,"GP2":0.125,"TREAT":0.50}
+},
+{
+  "name":"Pandemic",
+  "room":"PANS",
+  "diag":{"GP":0.70,"GD":0.17,"CARDIO":0.15,"WARD":0.15,"PSY":0.13,"FLUID":0.15,"XRAY":0.17,"MEGA":0.17,"DNA":0.15,"GP2":0.07,"TREAT":0.70}
+},
+{
+  "name":"Pipe Organs",
+  "room":"SURGERY",
+  "diag":{"GP":0.30,"GD":0.08,"CARDIO":0.08,"WARD":0.20,"PSY":0.08,"FLUID":0.10,"XRAY":0.30,"MEGA":0.30,"DNA":0.10,"GP2":0.06,"TREAT":0.50}
+},
+{
+  "name":"Portishead",
+  "room":"WARD",
+  "diag":{"GP":0.75,"GD":0.20,"CARDIO":0.20,"WARD":0.20,"PSY":0.05,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.15,"TREAT":0.60}
+},
+{
+  "name":"Potty Mouth",
+  "room":"PHARMA",
+  "diag":{"GP":0.50,"GD":0.20,"CARDIO":0.20,"WARD":0.35,"PSY":0.20,"FLUID":0.35,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.05,"TREAT":0.40}
+},
+{
+  "name":"Premature Mummification",
+  "room":"CRYPTO",
+  "diag": {"GP":0.28,"GD":0.10,"CARDIO":0.10,"WARD":0.10,"PSY":0.40,"FLUID":0.10,"XRAY":0.40,"MEGA":0.40,"DNA":0.10,"GP2":0.084,"TREAT":0.50}
+},
+{
+  "name":"Pudding Blood",
+  "room":"INJECTION",
+  "diag":{"GP":0.15,"GD":0.05,"CARDIO":0.05,"WARD":0.05,"PSY":0.25,"FLUID":0.15,"XRAY":0.30,"MEGA":0.05,"DNA":0.30,"GP2":0.075,"TREAT":0.30}
+},
+{
+  "name":"Rock Bottom",
+  "room":"INJECTION",
+  "diag":{"GP":0.50,"GD":0.17,"CARDIO":0.24,"WARD":0.07,"PSY":0.17,"FLUID":0.50,"XRAY":0.17,"MEGA":0.17,"DNA":0.45,"GP2":0.09,"TREAT":0.60}
+},
+{
+  "name":"Shattered",
+  "room":"FRACTURE",
+  "diag":{"GP":0.25,"GD":0.12,"CARDIO":0.07,"WARD":0.25,"PSY":0.12,"FLUID":0.12,"XRAY":0.25,"MEGA":0.25,"DNA":0.12,"GP2":0.05,"TREAT":0.20}
+},
+{
+  "name":"Shock Horror",
+  "room":"SHOCK",
+  "diag":{"GP":0.40,"GD":0.05,"CARDIO":0.15,"WARD":0.35,"PSY":0.05,"FLUID":0.35,"XRAY":0.05,"MEGA":0.05,"DNA":0.35,"GP2":0.10,"TREAT":0.50}
+},
+{
+  "name":"Spinal Bap",
+  "room":"SURGERY",
+  "diag":{"GP":0.45,"GD":0.08,"CARDIO":0.25,"WARD":0.08,"PSY":0.08,"FLUID":0.18,"XRAY":0.18,"MEGA":0.18,"DNA":0.15,"GP2":0.1125,"TREAT":0.70}
+},
+{
+  "name":"Spontaneous Combustion",
+  "room":"INJECTION",
+  "diag":{"GP":0.10,"GD":0.15,"CARDIO":0.05,"WARD":0.25,"PSY":0.05,"FLUID":0.05,"XRAY":0.05,"MEGA":0.30,"DNA":0.30,"GP2":0.05,"TREAT":0.20}
+},
+{
+  "name":"Touch of Midas",
+  "room":"DNA",
+  "diag":{"GP":0.10,"GD":0.09,"CARDIO":0.09,"WARD":0.09,"PSY":0.20,"FLUID":0.09,"XRAY":0.09,"MEGA":0.20,"DNA":0.40,"GP2":0.08,"TREAT":0.20}
+},
+{
+  "name":"Turtle Head",
+  "room":"TURTLE",
+  "diag":{"GP":0.30,"GD":0.15,"CARDIO":0.07,"WARD":0.15,"PSY":0.15,"FLUID":0.30,"XRAY":0.30,"MEGA":0.30,"DNA":0.30,"GP2":0.09,"TREAT":0.50}
+},
+{
+  "name":"Verbal Diarrhoea",
+  "room":"PHARMA",
+  "diag":{"GP":1.00,"GD":0.20,"CARDIO":0.20,"WARD":0.20,"PSY":0.20,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.25,"TREAT":0.75}
+}
+]

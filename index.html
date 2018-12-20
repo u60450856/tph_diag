@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Two Point Hospital: Illnesses Diagnostic Searcher</title>
+  <meta name="description" content="Two Point Hospital: Illnesses Diagnostic Searcher">
+  <meta name="author" content="vein">
+  <link rel="stylesheet" href="styles.css?v=1.0">
+</head>
+<body>
+  <div id="main">
+    <h2 id="pageTitle">Two Point Hospital: Illnesses Diagnostic Searcher</h2>
+    <div id="main">
+      <div id="setup">
+        <div class="title">Select Illnesses</div>
+        <div id="illnessList"></div>
+      </div>
+      <div id="result">
+        <div class="title">Best Diagnosis Rooms</div>
+        <div class="rooms"></div>
+      </div>
+      <div class="buttons">
+        <div id="btnSearch">Search...</div>
+      </div>
+    </div>
+    <div class="hidden">
+      <div id="tplIllness" class="illness`">
+        <span class="icon @{room}"></span><span class="title">@{name}</span>
+      </div>       
+      <div id="tplSearchResultItem" class="item">
+        <span class="icon"></span><span class="title">@{name}</span>
+      </div>
+      <div id="tplSearchResult" class="search_result">
+        <span class="icon"></span><span class="title">@{name}</span>
+      </div>      
+    </div>      
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+[
+  {"name":"GP"    ,"room":"GP"    ,"bitmask":1},
+  {"name":"GD"    ,"room":"GD"    ,"bitmask":2},
+  {"name":"CARDIO","room":"CARDIO","bitmask":4},
+  {"name":"WARD"  ,"room":"WARD"  ,"bitmask":8},
+  {"name":"PSY"   ,"room":"PSY"   ,"bitmask":16},
+  {"name":"FLUID" ,"room":"FLUID" ,"bitmask":32},
+  {"name":"XRAY"  ,"room":"XRAY"  ,"bitmask":64},
+  {"name":"MEGA"  ,"room":"MEGA"  ,"bitmask":128},
+  {"name":"DNA"   ,"room":"DNA"   ,"bitmask":256},
+  {"name":"GP2"   ,"room":"GP2"   ,"bitmask":512},
+  {"name":"TREAT" ,"room":"TREAT" ,"bitmask":1024}
+]

@@ -1,0 +1,205 @@
+var getXmlHttp = function() {
+  'use strict';
+  var xmlhttp;
+  try {
+    xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
+  } catch (e) {
+    try {
+      xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    } catch (E) {
+      xmlhttp = false;
+    }
+  }
+  if (!xmlhttp && typeof XMLHttpRequest !== 'undefined') {
+    xmlhttp = new XMLHttpRequest();
+  }
+  return xmlhttp;
+};
+if (!('escape' in RegExp)){
+  RegExp.escape = function(str) {
+  //return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  };
+}
+if (!('replaceMultiple' in String)){
+  String.replaceMultiple = function(str,map,reOptions){
+    reOptions = reOptions || 'gi';
+    if ((typeof map !== 'object') || (typeof str !== 'string')){
+      return str;
+    }
+    var n = Object.keys(map);
+    if(n.length<=0){
+      return str;
+    }
+    for(var i=0;i<n.length;i++){
+      n[i]=RegExp.escape(n[i]);
+    }
+    n=n.join('|');
+    var re = new RegExp(n, reOptions);
+    var t=str.replace(re,function(a){return map[a];});
+    return t;
+  };
+}
+var HtmlToDom = function(html) {
+  'use strict';
+  if (html){
+    var range = document.createRange();
+    range.selectNode(document.body);
+    return range.createContextualFragment(html);
+  }
+};
+var clearNode = function(node) {
+  'use strict';
+  while (node.firstChild) {
+      node.removeChild(node.firstChild);
+  }
+};
+var hashCode = function(s) {
+  'use strict';
+  s=s||'';
+  var i,l,hash=0x811c9dc5;
+  for(i=0,l=s.length;i<l;i++){
+    hash^=s.charCodeAt(i);
+    hash+=(hash<<1)+(hash<<4)+(hash<<7)+(hash<<8)+(hash<<24);
+  }
+  return hash>>>0;
+};
+// **********************************************
+let APP = (function(init) {
+  'use strict';
+  let _data = {ready: false, values: {}};
+  const _options = {
+      'dataUrls'        : {
+                            'illnesses': 'ilnesses.json',
+                            'diagRooms'    : 'rooms.json',
+                          }
+    };
+
+  const _getData = function(){
+    let dataUrls = Object.keys(_options.dataUrls);
+    dataUrls.forEach((data)=>{
+           fetch(_options.dataUrls[data])
+           .then((response)=>{
+              let cth = response.headers.get("content-type");
+              if(cth && cth.includes("application/json")) {return response.json();}
+              throw new TypeError("Oops, we haven't got JSON!");
+            })// then
+           .then((json)=>{
+              _data.values[data]=JSON.parse(json);
+              _data.ready=(Object.keys(_data.values).length==dataUrls.length);
+            })// then
+           .catch((error)=>{
+              console.log(error);
+            });//catch, fetch
+    });//forEach
+  };//_getData
+
+  const _waitData = function(start, callback){
+    let t;
+    let c = function(){
+      clearTimeout(t);
+      if(_data.ready){
+        callback()
+      };
+      t=setTimeout(c,1000);
+    };
+    switch(true){
+      case (typeof start === 'undefined' && typeof callback === 'undefined'):
+      break;
+      case (start === true && typeof callback === 'function' && typeof t === 'undefined'):
+        //t=setTimeout(c,1000);
+        c();
+      break;
+      case (start === false && typeof t !== 'undefined'):
+        clearTimeout(t);
+      break;   
+    };
+  };
+
+  let tplIllness = '';
+  const _themeIllness(illness){
+          if(tplIllness.length===0){
+            let el = document.getElementById('tplIllness');
+            if(el !== null){ 
+              let p = document.createElement('div');
+              let cel = el.cloneNode(true);
+                  cel.removeAttribute('id');            
+                  p.appendChild(cel);            
+                  cel = el.cloneNode();
+                  cel.id='';
+              tplIllness = p.innerHTML; 
+            }
+          }
+
+          const map = {'@{name}': illness.name,
+                       '@{room}' : illness.room,
+                      };
+          return Object.keys(map)
+                       .reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
+  };
+
+  let tplIllnessList = '';
+  const _themeIllnessList(){
+          if(tplIllnessList.length===0){
+            let el = document.getElementById('tplIllnessList');
+            if(el !== null){ 
+              let p = document.createElement('div');
+              let cel = el.cloneNode(true);
+                  cel.removeAttribute('id');            
+                  p.appendChild(cel);            
+                  cel = el.cloneNode();
+                  cel.id='';
+              tplIllnessList = p.innerHTML; 
+            }
+          }
+    return _data.values['Illnesses']
+           .reduce((theme,illness)=>{
+                     return theme + _themeIllness(ilness);
+                  },tplIllnessList);
+  };
+  const _showIllnessList (theme){
+    let el = document.getElementById('illnessList');
+    if (el === null){ return; }
+    let t = HtmlToDom(theme);
+    clearNode(el);
+    el.appendChild(t);
+  };
+////////////////////////////////////
+  const _doSearch = function (text) {
+    //_filterSearchResult(result);
+    //var theme = _themeSearchResult(result);
+    //_showSearchResult(theme);
+  };
+  const _doClear = function () {
+  };
+  const _cmdSearch = function (ev) {
+    _doSearch(ev.target.value);
+  };
+  const _cmdClear = function () {
+     _doClear();
+  };
+  const _bindCmds = function () {
+    let el;
+    el = document.getElementById('btnClear');
+    if (el !== null) { el.addEventListener('click', _cmdClear, false); }
+    el = document.getElementById('btnSearch');
+    if (el !== null) { el.addEventListener('input', _cmdSearch, false); }
+  };
+
+  const _onload = function(event) {
+    document.removeEventListener('DOMContentLoaded', _onload);
+    _getData();
+    _waitData(true,function(){
+      let t = _themeIllnessList();
+      _showIllnessList(t);
+      //_showSearchBtn();
+      _bindCmds();
+    });
+  };
+  let APP = {
+    init   : function() { document.addEventListener('DOMContentLoaded', _onload); },
+  };
+  if (init && (false === APP.init())){ return null; }
+  return APP;
+}(true));
+
