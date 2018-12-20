@@ -80,7 +80,6 @@ let APP = (function(init) {
     dataUrls.forEach((data)=>{
            fetch(_options.dataUrls[data])
            .then((response)=>{
-            console.log(response);
               let cth = response.headers.get("content-type");
               if(cth && cth.includes("application/json")) {
                 return response.json();
@@ -100,7 +99,6 @@ let APP = (function(init) {
   const _waitData = function(start, callback){
     let t;
     let c = function(){
-      console.log(_data.ready);
       clearTimeout(t);
       if(_data.ready){
         callback()
@@ -156,7 +154,6 @@ let APP = (function(init) {
               tplIllnessList = p.innerHTML; 
             }
           }
-    console.log(_data.values);
     return _data.values['illnesses']
            .reduce((theme,illness)=>{
                      return theme + _themeIllness(illness);
