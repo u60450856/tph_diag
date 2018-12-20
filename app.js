@@ -139,7 +139,7 @@ let APP = (function(init) {
   };
 
   let tplIllnessList = '';
-  const _themeIllnessList = fonction(){
+  const _themeIllnessList = function(){
           if(tplIllnessList.length===0){
             let el = document.getElementById('tplIllnessList');
             if(el !== null){ 
@@ -157,7 +157,8 @@ let APP = (function(init) {
                      return theme + _themeIllness(ilness);
                   },tplIllnessList);
   };
-  const _showIllnessList = fonction(theme){
+
+  const _showIllnessList = function(theme){
     let el = document.getElementById('illnessList');
     if (el === null){ return; }
     let t = HtmlToDom(theme);
