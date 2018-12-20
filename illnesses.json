@@ -60,6 +60,16 @@
   "diag":{"GP":0.90,"GD":0.20,"CARDIO":0.20,"WARD":0.20,"PSY":0.20,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.315,"TREAT":0.80}
 },
 {
+  "name":"Boggled Mind",
+  "room":"PSY",
+  "diag":{"GP":0.35,"GD":0.15,"CARDIO":0.15,"WARD":0.30,"PSY":0.15,"FLUID":0.15,"XRAY":0.30,"MEGA":0.30,"DNA":0.30,"GP2":0.0875,"TREAT":0.40}
+},
+{
+  "name":"Night Fever",
+  "room":"PSY",
+  "diag":{"GP":0.50,"GD":0.30,"CARDIO":0.15,"WARD":0.15,"PSY":0.30,"FLUID":0.30,"XRAY":0.15,"MEGA":0.15,"DNA":0.15,"GP2":0.125,"TREAT":0.50}
+},
+{
   "name":"Decision Rash",
   "room":"INJECTION",
   "diag":{"GP":0.40,"GD":0.07,"CARDIO":0.20,"WARD":0.12,"PSY":0.12,"FLUID":0.30,"XRAY":0.12,"MEGA":0.15,"DNA":0.12,"GP2":0.048 ,"TREAT":0.40}
@@ -118,16 +128,6 @@
   "name":"Portishead",
   "room":"WARD",
   "diag":{"GP":0.75,"GD":0.20,"CARDIO":0.20,"WARD":0.20,"PSY":0.05,"FLUID":0.20,"XRAY":0.20,"MEGA":0.20,"DNA":0.20,"GP2":0.15,"TREAT":0.60}
-},
-{
-  "name":"Boggled Mind",
-  "room":"PSY",
-  "diag":{"GP":0.35,"GD":0.15,"CARDIO":0.15,"WARD":0.30,"PSY":0.15,"FLUID":0.15,"XRAY":0.30,"MEGA":0.30,"DNA":0.30,"GP2":0.0875,"TREAT":0.40}
-},
-{
-  "name":"Night Fever",
-  "room":"PSY",
-  "diag":{"GP":0.50,"GD":0.30,"CARDIO":0.15,"WARD":0.15,"PSY":0.30,"FLUID":0.30,"XRAY":0.15,"MEGA":0.15,"DNA":0.15,"GP2":0.125,"TREAT":0.50}
 },
 {
   "name":"Broken Face",
