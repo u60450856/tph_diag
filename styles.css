@@ -39,9 +39,7 @@ button {
 .hidden {
   display: none;
 }
-#main {
-  width: 640px; margin: 0 auto;
-}
+#main {  }
 #searchForm{
   margin-bottom: 1em;
 }
@@ -74,13 +72,14 @@ button {
 }
 #illnessList{
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
   align-items: flex-start;
   flex-wrap: wrap;
+  margin-left: 40px;
 }
 
 .illness{
-  flex-basis: 20%;
+  flex-basis: 19%;
   vertical-align: middle;
   padding-left: 40px;
   padding-top: 4px;
