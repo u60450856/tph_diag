@@ -84,7 +84,7 @@ let APP = (function(init) {
               if(cth && cth.includes("application/json")) {
                 return response.json();
               }
-              //throw new TypeError("Oops, we haven't got JSON!");
+              throw new TypeError("Oops, we haven't got JSON!");
             })// then
            .then((json)=>{
               _data.values[data]=json;
