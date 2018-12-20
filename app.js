@@ -117,7 +117,7 @@ let APP = (function(init) {
   };
 
   let tplIllness = '';
-  const _themeIllness(illness){
+  const _themeIllness = function(illness){
           if(tplIllness.length===0){
             let el = document.getElementById('tplIllness');
             if(el !== null){ 
