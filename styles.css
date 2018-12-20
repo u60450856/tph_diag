@@ -72,3 +72,12 @@ button {
   text-align: right;
   color: rgb(214,197,48);
 }
+#illnessList{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.illness{
+  flex-basis: 20%;
+}
