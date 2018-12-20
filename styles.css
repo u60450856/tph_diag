@@ -84,14 +84,14 @@ button {
 }
 
 .illness .icon        {display:inline-block;width:36px;height:36px;}
-.illness .icon.GP     {background: url(IMAGES/ROOMS/GP.png) no-repeat center center transpaent;}
-.illness .icon.GD     {background: url(IMAGES/ROOMS/GD.png) no-repeat center center transpaent;}
-.illness .icon.CARDIO {background: url(IMAGES/ROOMS/CARDIO.png) no-repeat center center transpaent;}
-.illness .icon.WARD   {background: url(IMAGES/ROOMS/WARD.png) no-repeat center center transpaent;}
-.illness .icon.PSY    {background: url(IMAGES/ROOMS/PSY.png) no-repeat center center transpaent;}
-.illness .icon.FLUID  {background: url(IMAGES/ROOMS/FLUID.png) no-repeat center center transpaent;}
-.illness .icon.XRAY   {background: url(IMAGES/ROOMS/XRAY.png) no-repeat center center transpaent;}
-.illness .icon.MEGA0  {background: url(IMAGES/ROOMS/MEGA0.png) no-repeat center center transpaent;}
-.illness .icon.DNA    {background: url(IMAGES/ROOMS/DNA.png) no-repeat center center transpaent;}
-.illness .icon.GP2    {background: url(IMAGES/ROOMS/GP2.png) no-repeat center center transpaent;}
-.illness .icon.TREAT  {background: url(IMAGES/ROOMS/TREAT.png) no-repeat center center transpaent;}
+.illness .icon.GP     {background: url(/IMAGES/ROOMS/GP.png) no-repeat center center transpaent;}
+.illness .icon.GD     {background: url(/IMAGES/ROOMS/GD.png) no-repeat center center transpaent;}
+.illness .icon.CARDIO {background: url(/IMAGES/ROOMS/CARDIO.png) no-repeat center center transpaent;}
+.illness .icon.WARD   {background: url(/IMAGES/ROOMS/WARD.png) no-repeat center center transpaent;}
+.illness .icon.PSY    {background: url(/IMAGES/ROOMS/PSY.png) no-repeat center center transpaent;}
+.illness .icon.FLUID  {background: url(/IMAGES/ROOMS/FLUID.png) no-repeat center center transpaent;}
+.illness .icon.XRAY   {background: url(/IMAGES/ROOMS/XRAY.png) no-repeat center center transpaent;}
+.illness .icon.MEGA0  {background: url(/IMAGES/ROOMS/MEGA0.png) no-repeat center center transpaent;}
+.illness .icon.DNA    {background: url(/IMAGES/ROOMS/DNA.png) no-repeat center center transpaent;}
+.illness .icon.GP2    {background: url(/IMAGES/ROOMS/GP2.png) no-repeat center center transpaent;}
+.illness .icon.TREAT  {background: url(/IMAGES/ROOMS/TREAT.png) no-repeat center center transpaent;}
