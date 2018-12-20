@@ -41,7 +41,7 @@
 },
 {
   "name":"Cubism",
-  "room":"RECURVERY",
+  "room":"RECURVE",
   "diag":{"GP":0.28,"GD":0.10,"CARDIO":0.10,"WARD":0.10,"PSY":0.10,"FLUID":0.45,"XRAY":0.45,"MEGA":0.45,"DNA":0.45,"GP2":0.084 ,"TREAT":0.50}
 },
 {
