@@ -83,35 +83,34 @@ button {
   flex-basis: 25%;
   vertical-align: middle;
 }
-.illness .title       {display: inline-block;height: 36px;}
-.illness .icon        {display:inline-block;width:36px;height:36px;}
+.room.icon      {display:inline-block;width:36px;height:36px;}
 /* DIAGNOSIS ROOMS*/
-.illness .icon        {background-repeat: no-repeat;
-                       background-position: center, center;
-                       background-color: transparent;}
-.illness .icon.GP       {background-image: url(image/room/GP.png);}
-.illness .icon.GD       {background-image: url(image/room/GD.png);}
-.illness .icon.CARDIO   {background-image: url(image/room/CARDIO.png);}
-.illness .icon.WARD     {background-image: url(image/room/WARD.png);}
-.illness .icon.PSY      {background-image: url(image/room/PSY.png);}
-.illness .icon.FLUID    {background-image: url(image/room/FLUID.png);}
-.illness .icon.XRAY     {background-image: url(image/room/XRAY.png);}
-.illness .icon.MEGA     {background-image: url(image/room/MEGA0.png);}
-.illness .icon.DNA      {background-image: url(image/room/DNA.png);}
-.illness .icon.GP2      {background-image: url(image/room/GP2.png);}
-.illness .icon.TREAT    {background-image: url(image/room/TREAT.png);}
+.room.icon          {background-repeat: no-repeat;
+                     background-position: center, center;
+                     background-color: transparent;}
+.room.icon.GP       {background-image: url(image/room/GP.png);}
+.room.icon.GD       {background-image: url(image/room/GD.png);}
+.room.icon.CARDIO   {background-image: url(image/room/CARDIO.png);}
+.room.icon.WARD     {background-image: url(image/room/WARD.png);}
+.room.icon.PSY      {background-image: url(image/room/PSY.png);}
+.room.icon.FLUID    {background-image: url(image/room/FLUID.png);}
+.room.icon.XRAY     {background-image: url(image/room/XRAY.png);}
+.room.icon.MEGA     {background-image: url(image/room/MEGA0.png);}
+.room.icon.DNA      {background-image: url(image/room/DNA.png);}
+.room.icon.GP2      {background-image: url(image/room/GP2.png);}
+.room.icon.TREAT    {background-image: url(image/room/TREAT.png);}
 /* OTHER ROOMS*/  z
-.illness .icon.CHROMA   {background-image: url(image/room/CHROMA.png);}
-.illness .icon.CLOWN    {background-image: url(image/room/CLOWN.png);}
-.illness .icon.CRYPTO   {background-image: url(image/room/CRYPTO.png);}
-.illness .icon.DELUX    {background-image: url(image/room/DELUX.png);}
-.illness .icon.FRACTURE {background-image: url(image/room/FRACTURE.png);}
-.illness .icon.INJECTION{background-image: url(image/room/INJECTION.png);}
-.illness .icon.PANS     {background-image: url(image/room/PANS.png);}
-.illness .icon.PEST     {background-image: url(image/room/PEST.png);}
-.illness .icon.PHARMA   {background-image: url(image/room/PHARMA.png);}
-.illness .icon.RECURVE  {background-image: url(image/room/RECURVE.png);}
-.illness .icon.RES      {background-image: url(image/room/RES.png);}
-.illness .icon.SHOCK    {background-image: url(image/room/SHOCK.png);}
-.illness .icon.SURGERY  {background-image: url(image/room/SURGERY.png);}
-.illness .icon.TURTLE   {background-image: url(image/room/TURTLE.png);}
+.room.icon.CHROMA   {background-image: url(image/room/CHROMA.png);}
+.room.icon.CLOWN    {background-image: url(image/room/CLOWN.png);}
+.room.icon.CRYPTO   {background-image: url(image/room/CRYPTO.png);}
+.room.icon.DELUX    {background-image: url(image/room/DELUX.png);}
+.room.icon.FRACTURE {background-image: url(image/room/FRACTURE.png);}
+.room.icon.INJECTION{background-image: url(image/room/INJECTION.png);}
+.room.icon.PANS     {background-image: url(image/room/PANS.png);}
+.room.icon.PEST     {background-image: url(image/room/PEST.png);}
+.room.icon.PHARMA   {background-image: url(image/room/PHARMA.png);}
+.room.icon.RECURVE  {background-image: url(image/room/RECURVE.png);}
+.room.icon.RES      {background-image: url(image/room/RES.png);}
+.room.icon.SHOCK    {background-image: url(image/room/SHOCK.png);}
+.room.icon.SURGERY  {background-image: url(image/room/SURGERY.png);}
+.room.icon.TURTLE   {background-image: url(image/room/TURTLE.png);}
