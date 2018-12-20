@@ -70,7 +70,7 @@ let APP = (function(init) {
   let _data = {ready: false, values: {}};
   const _options = {
       'dataUrls'        : {
-                            'illnesses': 'ilnesses.json',
+                            'illnesses': 'illnesses.json',
                             'diagRooms'    : 'rooms.json',
                           }
     };
