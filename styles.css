@@ -85,7 +85,9 @@ button {
 
 .illness .icon        {display:inline-block;width:36px;height:36px;}
 /* DIAGNOSIS ROOMS*/
-.illness .icon     {background-repeat: no-repeat;background-attachment: center center; background-color: transpaent;}
+.illness .icon        {background-repeat: no-repeat;
+                       background-position: center, center;
+                       background-color: transparent;}
 .illness .icon.GP     {background-image: url(/IMAGES/ROOMS/GP.png);}
 .illness .icon.GD     {background-image: url(/IMAGES/ROOMS/GD.png);}
 .illness .icon.CARDIO {background-image: url(/IMAGES/ROOMS/CARDIO.png);}
