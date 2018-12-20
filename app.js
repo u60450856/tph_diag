@@ -101,7 +101,8 @@ let APP = (function(init) {
     let c = function(){
       clearTimeout(t);
       if(_data.ready){
-        callback()
+        callback();
+        return;
       };
       t=setTimeout(c,1000);
     };
