@@ -80,8 +80,10 @@ button {
 }
 
 .illness{
-  flex-basis: 20%;
+  flex-basis: 25%;
+  vertical-align: middle;
 }
+.illness .title       {display: inline-block;height: 36px;}
 .illness .icon        {display:inline-block;width:36px;height:36px;}
 /* DIAGNOSIS ROOMS*/
 .illness .icon        {background-repeat: no-repeat;
@@ -98,7 +100,7 @@ button {
 .illness .icon.DNA      {background-image: url(image/room/DNA.png);}
 .illness .icon.GP2      {background-image: url(image/room/GP2.png);}
 .illness .icon.TREAT    {background-image: url(image/room/TREAT.png);}
-/* OTHER ROOMS*/  
+/* OTHER ROOMS*/  z
 .illness .icon.CHROMA   {background-image: url(image/room/CHROMA.png);}
 .illness .icon.CLOWN    {background-image: url(image/room/CLOWN.png);}
 .illness .icon.CRYPTO   {background-image: url(image/room/CRYPTO.png);}
