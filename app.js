@@ -85,6 +85,7 @@ let APP = (function(init) {
               throw new TypeError("Oops, we haven't got JSON!");
             })// then
            .then((json)=>{
+            cpnsole.log(json);
               _data.values[data]=JSON.parse(json);
               _data.ready=(Object.keys(_data.values).length==dataUrls.length);
             })// then
