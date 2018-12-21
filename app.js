@@ -171,7 +171,7 @@ let APP = (function(init) {
 ////////////////////////////////////
   const _cmdSearch = function (ev) { };
   const _cmdClear = function (ev) { };
-  const _cmdIllnessSelect = function (ev) {
+  const _cmdIllnesSselect = function (ev) {
        if(ev.target.classList.contains('illness')){ ev.target.classList.toggle('selected'); }
   };
 
@@ -182,7 +182,10 @@ let APP = (function(init) {
       try {
         let el = document.getElementById(command.targetId);
         //if (el !== null) { el.addEventListener(command.eventType, command.capture,command.callback); }
-         //if (el !== null) { el.addEventListener(command.eventType, command.capture,command.callback); }
+        el.addEventListener('click',false,_cmdIllnesSselect);
+        //el.addEventListener(command.eventType, command.capture,command.callback);
+        //el.addEventListener(command.eventType, command.capture,command.callback);
+        //el.addEventListener(command.eventType, command.capture,command.callback);
       } catch (e) { console.log('Bind command error.',command); }
     });
   };  
