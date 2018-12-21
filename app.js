@@ -154,7 +154,7 @@ let APP = (function(init) {
             if(value.name=='illnesses'){
               return value;
             }
-          },{);
+          },{});
           return lData.value.reduce((theme,illness)=>{
                                return theme + _themeIllness(illness);
                              },tplIllnessList);
