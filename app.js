@@ -168,26 +168,28 @@ let APP = (function(init) {
     clearNode(el);
     el.appendChild(t);
   };
+
+  const _doIllnessSelect = function (el) {
+    el.classList.toggle('selected');
+  };
+  const _cmdIllnessSelect = function (ev) { _doIllnessSelect(ev.target); };
 ////////////////////////////////////
   const _doSearch = function (text) {
     //_filterSearchResult(result);
     //var theme = _themeSearchResult(result);
     //_showSearchResult(theme);
   };
-  const _doClear = function () {
-  };
-  const _cmdSearch = function (ev) {
-    _doSearch(ev.target.value);
-  };
-  const _cmdClear = function () {
-     _doClear();
-  };
+  const _doClear = function () { };
+  const _cmdSearch = function (ev) { _doSearch(ev.target.value); };
+  const _cmdClear = function () { _doClear(); };
   const _bindCmds = function () {
     let el;
     el = document.getElementById('btnClear');
     if (el !== null) { el.addEventListener('click', _cmdClear, false); }
     el = document.getElementById('btnSearch');
     if (el !== null) { el.addEventListener('input', _cmdSearch, false); }
+    el = document.getElementById('illnessList');
+    if (el !== null) { el.addEventListener('click', _cmdIllnessSelect, false); }    
   };
 
   const _onload = function(event) {
