@@ -149,7 +149,7 @@ let APP = (function(init) {
               tplIllnessList = p.innerHTML; 
             }
           }
-          let lData = {};
+          var lData = {};
           _data.values.forEach((value)=>{
             console.log(1,value.name);
             if(value.name=='illnesses'){ lData = value; } 
