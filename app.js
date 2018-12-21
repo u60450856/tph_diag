@@ -104,7 +104,7 @@ let APP = (function(init) {
         callback();
         return;
       };
-      t=setTimeout(c,1000);
+      t=setTimeout(c,240);
     };
     switch(true){
       case (typeof start === 'undefined' && typeof callback === 'undefined'):
@@ -155,7 +155,7 @@ let APP = (function(init) {
               tplIllnessList = p.innerHTML; 
             }
           }
-    return _data.values['illnesses']
+          return _data.values['illnesses']
            .reduce((theme,illness)=>{
                      return theme + _themeIllness(illness);
                   },tplIllnessList);
