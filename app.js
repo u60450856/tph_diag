@@ -196,8 +196,7 @@ let APP = (function(init) {
       _bindCmds([
                   {'clear'          ,'btnClear'   ,'click',false,_cmdClear},
                   {'search'         ,'btnSearch'  ,'click',false,_cmdSearch},
-                  //{'illnessSelected','illnessList','click',false,_cmdIllnessSelect},
-                  {'illnessSelected','illnessList','click',false,function(ev){if(ev.target.classList.contains('illness')){ ev.target.classList.toggle('selected'); }}},
+                  {'illnessSelected','illnessList','click',false,_cmdIllnessSelect},
                ]);
     });
   };
