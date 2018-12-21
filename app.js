@@ -172,7 +172,10 @@ let APP = (function(init) {
   const _cmdSearch = function (ev) { };
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
-       if(ev.target.classList.contains('illness')){ ev.target.classList.toggle('selected'); }
+       if(ev.target.classList.contains('illness')){ 
+         ev.stopPropagation();
+         ev.target.classList.toggle('selected'); 
+       }
   };
 
   const _bindCmds = function (commands) {
@@ -186,8 +189,8 @@ let APP = (function(init) {
         //el.addEventListener(command.eventType, command.capture,command.callback);
         //el.addEventListener(command.eventType, command.capture,command.callback);
 
-        let c = command.callback
-        el.addEventListener(command.eventType, false, c);
+        //let c = command.callback
+        //el.addEventListener(command.eventType, false, c);
         //el.addEventListener(command.eventType, command.capture, command.callback);
       } catch (e) { console.log('Bind command error.',command,el,e); }
     });
