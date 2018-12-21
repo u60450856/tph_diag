@@ -91,8 +91,10 @@ button {
 }
 .illness.selected {
   color: #fff;
-  background-color: rgba(255,255,255,0.25);
+  background-color: rgba(255,255,255,0.5);
   font-weight: bold;
+  text-shadow: 0 0 1px #000;
+
 }
 /* DIAGNOSIS ROOMS*/
 .room.icon          {background-repeat: no-repeat;
