@@ -155,7 +155,7 @@ let APP = (function(init) {
             if(value.name=='illnesses'){ lData = value; } 
           });
 
-          console.log(_data.values,_data.values.lebgth,lData);
+          console.log(_data.values,_data.values.length,lData);
           return lData.value.reduce((theme,illness)=>{
                                return theme + _themeIllness(illness);
                              },tplIllnessList);
