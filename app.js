@@ -186,7 +186,7 @@ let APP = (function(init) {
         //el.addEventListener(command.eventType, command.capture,command.callback);
         //el.addEventListener(command.eventType, command.capture,command.callback);
         //el.addEventListener(command.eventType, command.capture,command.callback);
-      } catch (e) { console.log('Bind command error.',command); }
+      } catch (e) { console.log('Bind command error.',command,e); }
     });
   };  
 
