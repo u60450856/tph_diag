@@ -69,7 +69,7 @@ let APP = (function(init) {
   'use strict';
   let _data = {ready: false, values: []};
 
-  const _getData = function(data){
+  const _getData = function(data,callback){
     data.forEach((lData)=>{
            fetch(lData.url)
            .then((response)=>{
@@ -87,6 +87,7 @@ let APP = (function(init) {
               console.log('Data load error.',lData.id,e);
             });//catch, fetch
     });//forEach
+    _waitData(true,callback());
   };//_getData
 
   const _waitData = function(start, callback){
@@ -153,7 +154,6 @@ let APP = (function(init) {
               return value;
             }
           });
-          console.log('lData:',lData);
           return lData.value.reduce((theme,illness)=>{
                                return theme + _themeIllness(illness);
                              },tplIllnessList);
@@ -192,8 +192,8 @@ let APP = (function(init) {
     _getData([
               {id:'illnesses',url:'illnesses.json'},
               {id:'diagRooms',url:'rooms.json'}
-            ]);
-    _waitData(true,function(){
+            ],
+            function(){
                let t = _themeIllnessList();
                _showIllnessList(t);
               //_showSearchBtn();
@@ -202,7 +202,7 @@ let APP = (function(init) {
                           ['search'         ,'bnSearch'   ,'click',false,_cmdSearch],
                           ['illnessSelected','illnessList','click',false,_cmdIllnessSelect],
                        ]);
-    });
+            });
   };
   let APP = {
     init   : function() { document.addEventListener('DOMContentLoaded', _onload); },
