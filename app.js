@@ -179,14 +179,14 @@ let APP = (function(init) {
     if( !Array.isArray(commands)){return false};
     commands.forEach((command)=>{
       //{id:'',targetId:'',eventType:'',capture:boolean,callback:function}
+      let el = document.getElementById(command.targetId);
       try {
-        let el = document.getElementById(command.targetId);
         //if (el !== null) { el.addEventListener(command.eventType, command.capture,command.callback); }
-        el.addEventListener('click',false,_cmdIllnessSelect);
+        //el.addEventListener('click',false,_cmdIllnessSelect);
         //el.addEventListener(command.eventType, command.capture,command.callback);
         //el.addEventListener(command.eventType, command.capture,command.callback);
-        //el.addEventListener(command.eventType, command.capture,command.callback);
-      } catch (e) { console.log('Bind command error.',command,e); }
+        el.addEventListener(command.eventType, command.capture,command.callback);
+      } catch (e) { console.log('Bind command error.',command,el,e); }
     });
   };  
 
