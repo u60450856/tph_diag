@@ -185,7 +185,7 @@ let APP = (function(init) {
       let el = document.getElementById(command.targetId);
       try {
         //if (el !== null) { el.addEventListener(command.eventType, command.capture,command.callback); }
-        //el.addEventListener('click',false,_cmdIllnessSelect);
+        el.addEventListener('click',false,_cmdIllnessSelect);
         //el.addEventListener(command.eventType, command.capture,command.callback);
         //el.addEventListener(command.eventType, command.capture,command.callback);
 
