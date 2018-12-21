@@ -182,7 +182,7 @@ let APP = (function(init) {
       try {
         let el = document.getElementById(commanmd.targetId);
         if (el !== null) { el.addEventListener(command.evenType, command.capture,command.callback); }
-      } catch (e) { console.log('Bind command error.'); }
+      } catch (e) { console.log('Bind command \"'+command.id+'\' error.'); }
     });
   };  
 
