@@ -181,10 +181,10 @@ let APP = (function(init) {
   const _bindCmds = function (commands) {
     if( !Array.isArray(commands)){return false};
     commands.forEach((command)=>{
-      //{id:'',targetId:'',eventType:'',capture:boolean,callback:function}
-      let el = document.getElementById(command.targetId);
+      //[id,targetId,eventType,capture,callback]
+      let el = document.getElementById(command[1]);
       try {
-        el.addEventListener(command.eventType,command.callback,command.capture);
+        el.addEventListener(command[2],command[4],command[3]);
       } catch (e) { console.log('Bind command error.',command,el,e); }
     });
   };  
@@ -197,9 +197,9 @@ let APP = (function(init) {
       _showIllnessList(t);
       //_showSearchBtn();
       _bindCmds([
-                  {id:'clear'          ,targetId:'btnClear'   ,eventType:'click',capture:false,callback:_cmdClear},
-                  {id:'search'         ,targetId:'bnSearch'   ,eventType:'click',capture:false,callback:_cmdSearch},
-                  {id:'illnessSelected',targetId:'illnessList',eventType:'click',capture:false,callback:_cmdIllnessSelect},
+                  ['clear'          ,'btnClear'   ,'click',false,_cmdClear],
+                  ['search'         ,'bnSearch'   ,'click',false,_cmdSearch],
+                  ['illnessSelected','illnessList','click',false,_cmdIllnessSelect],
                ]);
     });
   };
