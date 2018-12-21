@@ -152,12 +152,11 @@ let APP = (function(init) {
           }
           var lData = {};
           _data.values.forEach((value)=>{
-            console.log(1,value.name);
             if(value.name=='illnesses'){ lData = value; } 
           });
 
-          lData = _data.values[1];
-          console.log(_data.values,_data.values.length,lData);
+//          lData = _data.values[1];
+//          console.log(_data.values,_data.values.length,lData);
           return lData.value.reduce((theme,illness)=>{
                                return theme + _themeIllness(illness);
                              },tplIllnessList);
