@@ -176,7 +176,7 @@ let APP = (function(init) {
   };
 
   const _bindCmds = function (commands) {
-    if( !Array.isArray(commands)){return false;
+    if( !Array.isArray(commands)){return false};
     commands.forEach((command)=>{
       //(id,targetId,eventType,capture,callback)
       try {
