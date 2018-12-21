@@ -88,10 +88,11 @@ button {
 .illness {
   border: solid 1px;
   border-radius: 8px;
+  background-color: rgba(197,214,190,0.15);
 }
 .illness.selected {
   color: #fff;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.35);
   font-weight: bold;
   text-shadow: 0 0 1px #000;
 
