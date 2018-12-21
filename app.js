@@ -184,14 +184,7 @@ let APP = (function(init) {
       //{id:'',targetId:'',eventType:'',capture:boolean,callback:function}
       let el = document.getElementById(command.targetId);
       try {
-        //if (el !== null) { el.addEventListener(command.eventType, command.capture,command.callback); }
-        el.addEventListener('click',_cmdIllnessSelect,false);
-        //el.addEventListener(command.eventType, command.capture,command.callback);
-        //el.addEventListener(command.eventType, command.capture,command.callback);
-
-        //let c = command.callback
-        //el.addEventListener(command.eventType, false, c);
-        //el.addEventListener(command.eventType, command.capture, command.callback);
+        el.addEventListener(command.eventType,command.callback,command.capture);
       } catch (e) { console.log('Bind command error.',command,el,e); }
     });
   };  
@@ -204,8 +197,8 @@ let APP = (function(init) {
       _showIllnessList(t);
       //_showSearchBtn();
       _bindCmds([
-                  //{id:'clear'          ,targetId:'btnClear'   ,eventType:'click',capture:false,callback:_cmdClear},
-                  //{id:'search'         ,targetId:'bnSearch'   ,eventType:'click',capture:false,callback:_cmdSearch},
+                  {id:'clear'          ,targetId:'btnClear'   ,eventType:'click',capture:false,callback:_cmdClear},
+                  {id:'search'         ,targetId:'bnSearch'   ,eventType:'click',capture:false,callback:_cmdSearch},
                   {id:'illnessSelected',targetId:'illnessList',eventType:'click',capture:false,callback:_cmdIllnessSelect},
                ]);
     });
