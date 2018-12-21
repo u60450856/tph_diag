@@ -150,11 +150,10 @@ let APP = (function(init) {
             }
           }
           console.log(_data.values);
-          let lData = _data.values.reduce((result,value)=>{
-            if(value.name=='illnesses'){
-              return value;
-            }
-          },{});
+          let lData = {};
+          _data.values.forEach((value)=>{
+            if(value.name=='illnesses'){ lData = value; }
+          });
           return lData.value.reduce((theme,illness)=>{
                                return theme + _themeIllness(illness);
                              },tplIllnessList);
