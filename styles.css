@@ -94,6 +94,8 @@ button {
 }
 .illness.selected {
   color: #fff;
+  border-width: 2px;
+  padding: 3px 3px 3px 43px ;
   background-color: rgba(255,255,255,0.35);
 }
 /* DIAGNOSIS ROOMS*/
