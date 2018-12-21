@@ -87,7 +87,7 @@ let APP = (function(init) {
               console.log('Data load error.',lData.id,e);
             });//catch, fetch
     });//forEach
-    _waitData(true,callback;
+    _waitData(true,callback);
   };//_getData
 
   const _waitData = function(start, callback){
