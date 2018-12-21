@@ -183,8 +183,8 @@ let APP = (function(init) {
   };
   const _doClear = function () { };
   const _cmdSearch = function (ev) { _doSearch(ev.target.value); };
-  const _cmdClear = function () { _doClear(); };
-  const _bindCmds = function () {
+  const _cmdClear = function (ev) { _doClear(); };
+  const _bindCmds0 = function () {
     let el;
     el = document.getElementById('btnClear');
     if (el !== null) { el.addEventListener('click', _cmdClear, false); }
@@ -194,6 +194,17 @@ let APP = (function(init) {
     if (el !== null) { el.addEventListener('click', _cmdIllnessSelect, false); }    
   };
 
+  const _bindCmds = function (commands) {
+    if( !Array.isArray(commands)){return false;
+    commands.forEach((command)=>{
+      //(id,targetId,eventType,capture,callback)
+      try {
+        let el = document.getElementById(commanmd.targetId);
+        if (el !== null) { el.addEventListener(command.evenType, command.capture,command.callback); }
+      } catch (e) { console.log('Bind command error.'); }
+    });
+  };  
+
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData();
@@ -201,7 +212,12 @@ let APP = (function(init) {
       let t = _themeIllnessList();
       _showIllnessList(t);
       //_showSearchBtn();
-      _bindCmds();
+      let commands = [
+                      {'clear' ,'btnClear' ,'click',false,_cmdClear},
+                      {'search','btnSearch','click',false,_cmdSearch},
+                      {'illnessSelected','illnessList','click',false,_cmdIllnessSelect},
+                     ];
+      _bindCmds(commands);
     });
   };
   let APP = {
