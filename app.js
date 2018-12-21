@@ -170,7 +170,7 @@ let APP = (function(init) {
   };
 
   const _doIllnessSelect = function (el) {
-    if(ev.classList.contains('illness')){
+    if(el.classList.contains('illness')){
       el.classList.toggle('selected');
     }
   };
