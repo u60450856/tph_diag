@@ -181,7 +181,8 @@ let APP = (function(init) {
       //{id:'',targetId:'',eventType:'',capture:boolean,callback:function}
       try {
         let el = document.getElementById(command.targetId);
-        if (el !== null) { el.addEventListener(command.eventType, command.capture,command.callback); }
+        //if (el !== null) { el.addEventListener(command.eventType, command.capture,command.callback); }
+         //if (el !== null) { el.addEventListener(command.eventType, command.capture,command.callback); }
       } catch (e) { console.log('Bind command error.',command); }
     });
   };  
