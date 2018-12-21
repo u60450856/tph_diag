@@ -194,9 +194,9 @@ let APP = (function(init) {
       _showIllnessList(t);
       //_showSearchBtn();
       _bindCmds([
-                  {'clear'          ,'btnClear'   ,'click',false,_cmdClear},
-                  {'search'         ,'btnSearch'  ,'click',false,_cmdSearch},
-                  {'illnessSelected','illnessList','click',false,_cmdIllnessSelect},
+                  {id:'clear'          ,targetId:'btnClear'   ,eventType:'click',capture:false,callback:_cmdClear},
+                  {id:'search'         ,targetId:'btnSearch'  ,eventType:'click',capture:false,callback:_cmdSearch},
+                  {id:'illnessSelected',targetId:'illnessList',eventType:'click',capture:false,callback:_cmdIllnessSelect},
                ]);
     });
   };
