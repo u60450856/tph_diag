@@ -168,30 +168,11 @@ let APP = (function(init) {
     clearNode(el);
     el.appendChild(t);
   };
-
-  const _doIllnessSelect = function (el) {
-    if(el.classList.contains('illness')){
-      el.classList.toggle('selected');
-    }
-  };
-  const _cmdIllnessSelect = function (ev) { _doIllnessSelect(ev.target); };
 ////////////////////////////////////
-  const _doSearch = function (text) {
-    //_filterSearchResult(result);
-    //var theme = _themeSearchResult(result);
-    //_showSearchResult(theme);
-  };
-  const _doClear = function () { };
-  const _cmdSearch = function (ev) { _doSearch(ev.target.value); };
-  const _cmdClear = function (ev) { _doClear(); };
-  const _bindCmds0 = function () {
-    let el;
-    el = document.getElementById('btnClear');
-    if (el !== null) { el.addEventListener('click', _cmdClear, false); }
-    el = document.getElementById('btnSearch');
-    if (el !== null) { el.addEventListener('input', _cmdSearch, false); }
-    el = document.getElementById('illnessList');
-    if (el !== null) { el.addEventListener('click', _cmdIllnessSelect, false); }    
+  const _cmdSearch = function (ev) { };
+  const _cmdClear = function (ev) { };
+  const _cmdIllnessSelect = function (ev) {
+       if(ev.target.classList.contains('illness')){ ev.target.classList.toggle('selected'); }
   };
 
   const _bindCmds = function (commands) {
@@ -212,12 +193,12 @@ let APP = (function(init) {
       let t = _themeIllnessList();
       _showIllnessList(t);
       //_showSearchBtn();
-      let commands = [
-                      {'clear' ,'btnClear' ,'click',false,_cmdClear},
-                      {'search','btnSearch','click',false,_cmdSearch},
-                      {'illnessSelected','illnessList','click',false,_cmdIllnessSelect},
-                     ];
-      _bindCmds(commands);
+      _bindCmds([
+                  {'clear'          ,'btnClear'   ,'click',false,_cmdClear},
+                  {'search'         ,'btnSearch'  ,'click',false,_cmdSearch},
+                  //{'illnessSelected','illnessList','click',false,_cmdIllnessSelect},
+                  {'illnessSelected','illnessList','click',false,function(ev){if(ev.target.classList.contains('illness')){ ev.target.classList.toggle('selected'); }}},
+               ]);
     });
   };
   let APP = {
