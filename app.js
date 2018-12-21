@@ -149,11 +149,12 @@ let APP = (function(init) {
               tplIllnessList = p.innerHTML; 
             }
           }
+          console.log(_data.values);
           let lData = _data.values.reduce((result,value)=>{
             if(value.name=='illnesses'){
               return value;
             }
-          });
+          },{);
           return lData.value.reduce((theme,illness)=>{
                                return theme + _themeIllness(illness);
                              },tplIllnessList);
