@@ -185,7 +185,10 @@ let APP = (function(init) {
         //el.addEventListener('click',false,_cmdIllnessSelect);
         //el.addEventListener(command.eventType, command.capture,command.callback);
         //el.addEventListener(command.eventType, command.capture,command.callback);
-        el.addEventListener(command.eventType, command.capture,command.callback);
+
+        let c = command.callback
+        el.addEventListener(command.eventType, false, c);
+        //el.addEventListener(command.eventType, command.capture, command.callback);
       } catch (e) { console.log('Bind command error.',command,el,e); }
     });
   };  
