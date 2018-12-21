@@ -68,12 +68,6 @@ var hashCode = function(s) {
 let APP = (function(init) {
   'use strict';
   let _data = {ready: false, values: [];
-  const _options = {
-      'dataUrls'        : {
-                            'illnesses': 'illnesses.json',
-                            'diagRooms'    : 'rooms.json',
-                          }
-    };
 
   const _getData = function(data){
     data.forEach((lData)=>{
@@ -159,10 +153,10 @@ let APP = (function(init) {
               return value;
             }
           });
-          return lData.values['illnesses']
-           .reduce((theme,illness)=>{
-                     return theme + _themeIllness(illness);
-                  },tplIllnessList);
+          console.log('lData:',lData);
+          return lData.value.reduce((theme,illness)=>{
+                               return theme + _themeIllness(illness);
+                             },tplIllnessList);
   };
 
   const _showIllnessList = function(theme){
@@ -195,16 +189,19 @@ let APP = (function(init) {
 
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
-    _getData();
+    _getData([
+              {'illnesses': 'illnesses.json'},
+              {'diagRooms'    : 'rooms.json'}
+            ]);
     _waitData(true,function(){
-      let t = _themeIllnessList();
-      _showIllnessList(t);
-      //_showSearchBtn();
-      _bindCmds([
-                  ['clear'          ,'btnClear'   ,'click',false,_cmdClear],
-                  ['search'         ,'bnSearch'   ,'click',false,_cmdSearch],
-                  ['illnessSelected','illnessList','click',false,_cmdIllnessSelect],
-               ]);
+               let t = _themeIllnessList();
+               _showIllnessList(t);
+              //_showSearchBtn();
+              _bindCmds([
+                          ['clear'          ,'btnClear'   ,'click',false,_cmdClear],
+                          ['search'         ,'bnSearch'   ,'click',false,_cmdSearch],
+                          ['illnessSelected','illnessList','click',false,_cmdIllnessSelect],
+                       ]);
     });
   };
   let APP = {
