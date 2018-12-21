@@ -67,7 +67,7 @@ var hashCode = function(s) {
 // **********************************************
 let APP = (function(init) {
   'use strict';
-  let _data = {ready: false, values: {}};
+  let _data = {ready: false, values: [];
   const _options = {
       'dataUrls'        : {
                             'illnesses': 'illnesses.json',
@@ -75,10 +75,9 @@ let APP = (function(init) {
                           }
     };
 
-  const _getData = function(){
-    let dataUrls = Object.keys(_options.dataUrls);
-    dataUrls.forEach((data)=>{
-           fetch(_options.dataUrls[data])
+  const _getData = function(data){
+    data.forEach((lData)=>{
+           fetch(lData.url)
            .then((response)=>{
               let cth = response.headers.get("content-type");
               if(cth && cth.includes("application/json")) {
@@ -87,11 +86,11 @@ let APP = (function(init) {
               throw new TypeError("Oops, we haven't got JSON!");
             })// then
            .then((json)=>{
-              _data.values[data]=json;
-              _data.ready=(Object.keys(_data.values).length==dataUrls.length);
+              _data.values.push({name:'',value:json});
+              _data.ready=(_data.values.length==data.length);
             })// then
-           .catch((error)=>{
-              console.log(error);
+           .catch((e)=>{
+              console.log('Data load error.',lData.name,e);
             });//catch, fetch
     });//forEach
   };//_getData
@@ -155,7 +154,12 @@ let APP = (function(init) {
               tplIllnessList = p.innerHTML; 
             }
           }
-          return _data.values['illnesses']
+          let lData = _data.values.reduce((result,value)=>{
+            if(value.name=='illnesses'){
+              return value;
+            }
+          });
+          return lData.values['illnesses']
            .reduce((theme,illness)=>{
                      return theme + _themeIllness(illness);
                   },tplIllnessList);
@@ -168,15 +172,6 @@ let APP = (function(init) {
     clearNode(el);
     el.appendChild(t);
   };
-////////////////////////////////////
-  const _cmdSearch = function (ev) { };
-  const _cmdClear = function (ev) { };
-  const _cmdIllnessSelect = function (ev) {
-       if(ev.target.classList.contains('illness')){ 
-         ev.stopPropagation();
-         ev.target.classList.toggle('selected'); 
-       }
-  };
 
   const _bindCmds = function (commands) {
     if( !Array.isArray(commands)){return false};
@@ -188,6 +183,15 @@ let APP = (function(init) {
       } catch (e) { console.log('Bind command error.',command,el,e); }
     });
   };  
+////////////////////////////////////
+  const _cmdSearch = function (ev) { };
+  const _cmdClear = function (ev) { };
+  const _cmdIllnessSelect = function (ev) {
+       if(ev.target.classList.contains('illness')){ 
+         ev.stopPropagation();
+         ev.target.classList.toggle('selected'); 
+       }
+  };
 
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
