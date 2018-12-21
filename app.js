@@ -150,7 +150,10 @@ let APP = (function(init) {
             }
           }
           let lData = {};
-          _data.values.forEach((value)=> {console.log(value.name); if(value.name=='illnesses'){ lData = value; } });
+          _data.values.forEach((value)=>{
+            console.log(1,value.name);
+            if(value.name=='illnesses'){ lData = value; } 
+          });
 
           console.log(_data.values,lData);
           return lData.value.reduce((theme,illness)=>{
