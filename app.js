@@ -67,7 +67,7 @@ var hashCode = function(s) {
 // **********************************************
 let APP = (function(init) {
   'use strict';
-  let _data = {ready: false, values: [];
+  let _data = {ready: false, values: []};
 
   const _getData = function(data){
     data.forEach((lData)=>{
