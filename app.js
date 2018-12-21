@@ -80,11 +80,11 @@ let APP = (function(init) {
               throw new TypeError("Oops, we haven't got JSON!");
             })// then
            .then((json)=>{
-              _data.values.push({name:'',value:json});
+              _data.values.push({name:lData.id,value:json});
               _data.ready=(_data.values.length==data.length);
             })// then
            .catch((e)=>{
-              console.log('Data load error.',lData.name,e);
+              console.log('Data load error.',lData.id,e);
             });//catch, fetch
     });//forEach
   };//_getData
@@ -190,8 +190,8 @@ let APP = (function(init) {
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
-              {'illnesses': 'illnesses.json'},
-              {'diagRooms'    : 'rooms.json'}
+              {id:'illnesses',url:'illnesses.json'},
+              {id:'diagRooms',url:'rooms.json'}
             ]);
     _waitData(true,function(){
                let t = _themeIllnessList();
