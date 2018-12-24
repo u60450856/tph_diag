@@ -135,7 +135,8 @@ let APP = (function(init) {
           return Object.keys(map)
                        .reduce((tpl,token)=>{
                           console.log(('replaceMultiple' in String),typeof tpl, tpl);
-                          return tpl.replaceMultiple(token, map[token]);
+                          let t = tpl.replaceMultiple(token, map[token]);
+                          return t;
                         },tplIllness);
                        //.reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
 
