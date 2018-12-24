@@ -189,14 +189,6 @@ let APP = (function(init) {
           t,item=>item.getAttribute('data-name')
         );
     console.log(t,arrSelectedIllnesses);
-
-
-
-
-
-
-
-
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
