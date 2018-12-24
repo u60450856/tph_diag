@@ -135,6 +135,11 @@ let APP = (function(init) {
           return Object.keys(map)
                        //.reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
                        .reduce((tpl,token)=>tpl.replaceMultiple(token, map[token]),tplIllness);
+
+
+
+
+                       
   };
 
   let tplIllnessList = '';
