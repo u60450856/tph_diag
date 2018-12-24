@@ -186,7 +186,7 @@ let APP = (function(init) {
     let t = document.querySelectorAll('.illnessList .illness.selected');
     let arrSelectedIllnesses = [].map.call(
           t,
-          item=>item.getAttribute('data-illness')
+          item=>item.getAttribute('data-name')
         );
     console.log(t,arrSelectedIllnesses);
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
