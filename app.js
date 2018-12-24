@@ -184,7 +184,7 @@ let APP = (function(init) {
   const _cmdSearch = function (ev) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
-    let arrSelectedIllnesses = document.querySelectionAll('.illnessList ,illness.selected') || [];
+    let arrSelectedIllnesses = document.querySelectorAll('.illnessList ,illness.selected') || [];
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
