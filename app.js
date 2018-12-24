@@ -187,7 +187,6 @@ let APP = (function(init) {
           document.querySelectorAll('#illnessList .illness.selected')
           ,item=>item.getAttribute('data-name')
         );
-    console.log(arrSelectedIllnesses);
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
@@ -211,16 +210,15 @@ let APP = (function(init) {
     console.log(arrSelectedIllnesses);
 
 
-    let arrDiagChance = [];
-        arrDiagChance = arrSelectedIllnesses.map(illness=>{
-                          let t = [];
-                          arrDiagSets.forEach(ds=>{
-                            t.push({ds:calcDiagChance(illness,diagSet)});
-                          });
-                          illness.diagChance = t;
-                          return illness;
-                        });
-
+    let arrDiagChance = [].map.call(arrSelectedIllnesses, illness=>{
+                                      let t = [];
+                                      arrDiagSets.forEach(ds=>{
+                                        t.push({ds:calcDiagChance(illness,ds)});
+                                      });
+                                      illness.diagChance = t;
+                                      return illness;
+                                    });
+    cosole.log(arrDiagChance):
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
