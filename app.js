@@ -188,8 +188,14 @@ let APP = (function(init) {
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
-    const bitmaskGenerate = function(n){return range(Math.pow(2, n))};
+    const bitmaskGenerate = function(n){return bitmaskRange(Math.pow(2, n))};
     let arrDiagSets= bitmaskGenerate(11);
+    // конвертируем массив в объект вида  ROOM:BITMASK
+    let objDiagRooms = {};
+    _data.values['rooms'].forEach(dr=>{
+      objDiagRooms[dr.name]=dr.bitmask;
+    });    
+    console.log('198',_data.values['rooms'],objDiagRooms);
     //Считаем шанс диагностики для заболевания конкретным diagSet
     const calcDiagChance = function (illness, diagSet){
       let dc = Object.keys(objDiagRooms).reduce(chance, dr => {
