@@ -183,10 +183,10 @@ let APP = (function(init) {
   const _cmdSearch = function (ev) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
-    let t = document.querySelectorAll('.illnessList .illness.selected');
+    //let t = document.querySelectorAll('.illnessList .illness.selected');
+    let t = document.querySelectorAll('.selected');
     let arrSelectedIllnesses = [].map.call(
-          t,
-          item=>item.getAttribute('data-name')
+          t,item=>item.getAttribute('data-name')
         );
     console.log(t,arrSelectedIllnesses);
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
