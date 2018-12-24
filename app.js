@@ -187,11 +187,6 @@ let APP = (function(init) {
           document.querySelectorAll('#illnessList .illness.selected')
           ,item=>item.getAttribute('data-name')
         );
-
-
-
-
-
     console.log(arrSelectedIllnesses);
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
