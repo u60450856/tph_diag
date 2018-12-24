@@ -115,7 +115,7 @@ let APP = (function(init) {
   };
 
   let tplIllness = '';
-  const _themeIllness = function(illness){
+  let _themeIllness = function(illness){
           if(tplIllness.length===0){
             let el = document.getElementById('tplIllness');
             if(el !== null){ 
@@ -134,12 +134,8 @@ let APP = (function(init) {
                       };
           return Object.keys(map)
                        .reduce((tpl,token)=>{
-                          console.log(typeof tpl, tpl);
+                          console.log(('replaceMultiple' in String),typeof tpl, tpl);
                           return tpl.replaceMultiple(token, map[token]);
-
-
-
-                          
                         },tplIllness);
                        //.reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
 
