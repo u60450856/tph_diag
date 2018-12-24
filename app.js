@@ -218,7 +218,7 @@ let APP = (function(init) {
                                       illness.diagChance = t;
                                       return illness;
                                     });
-    cosole.log(arrDiagChance):
+    cosole.log(arrDiagChance);
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
