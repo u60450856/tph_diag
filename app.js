@@ -192,7 +192,7 @@ let APP = (function(init) {
     let arrDiagSets= bitmaskGenerate(11);
     // конвертируем массив в объект вида  ROOM:BITMASK
     let objDiagRooms = {};
-    _data.values['rooms'].forEach(dr=>{
+    _data.values['diagRooms'].forEach(dr=>{
       objDiagRooms[dr.name]=dr.bitmask;
     });    
     console.log('198',_data.values['rooms'],objDiagRooms);
