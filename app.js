@@ -155,8 +155,8 @@ let APP = (function(init) {
             if(value.name=='illnesses'){ lData = value; } 
           });
 
-//          lData = _data.values[1];
-//          console.log(_data.values,_data.values.length,lData);
+    //      lData = _data.values[1];
+    //      console.log(_data.values,_data.values.length,lData);
           return lData.value.reduce((theme,illness)=>{
                                return theme + _themeIllness(illness);
                              },tplIllnessList);
@@ -181,7 +181,40 @@ let APP = (function(init) {
     });
   };  
 ////////////////////////////////////
-  const _cmdSearch = function (ev) { };
+  const _cmdSearch = function (ev) {
+    //getSelectedIllnesses()
+    //Генерируем массив выбраных заболваний
+    let arrSelectedIllnesses = document.querySelectionAll('.illnessList ,illness.selected') || [];
+    //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
+    //calculateDiag()
+    const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
+    const bitmaskGenerate = function(n){return range(Math.pow(2, n))};
+    let arrDiagSets= bitmaskGenerate(11);
+    //Считаем шанс диагностики для заболевания конкретным diagSet
+    const calcDiagChance = function (illness, diagSet){
+      let dc = Object.keys(objDiagRooms).reduce(chance, dr => {
+        if(diagSet & objDiagRooms[dr]){
+           return chance * illness.diag[dr];
+        };
+      },1);
+      return dc;
+    };
+    let arrDiagChance = [];
+        arrDiagChance = arrSelectedIllnesses.map(illness=>>{
+                          let t = [];
+                          arrDiagSets.forEach(ds=>{
+                            t.push({ds:calcDiagChance(illness,diagSet)});
+                          });
+                          illness.diagChance = t;
+                          return illness;
+                        });
+
+    //sortDiagsSets()
+    //theneDiagSets()
+    ///themeDiagSet()
+    ////themeDiagRoom()
+    //showDiagSets()
+  };
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
        if(ev.target.classList.contains('illness')){ 

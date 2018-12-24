@@ -18,20 +18,18 @@
       </div>
       <div id="result">
         <div class="title">Best Diagnosis Rooms</div>
-        <div class="rooms"></div>
+        <div id="diagSets">
+          <div class="diagSet"><span class="diagRoom room icon"></span><span class="diagChance"></span></div>
+        </div>
+
       </div>
       <div class="buttons">
-        <div id="btnSearch">Search...</div>
+        <button id="btnSearch">Search...</button>
       </div>
     </div>
     <div class="hidden">
       <div id="tplIllness" class="illness icon room @{room}">@{name}</div>       
-      <div id="tplSearchResultItem" class="item">
-        <span class="icon"></span><span class="title">@{name}</span>
-      </div>
-      <div id="tplSearchResult" class="search_result">
-        <span class="icon"></span><span class="title">@{name}</span>
-      </div>      
+      <div id="tplDiagSet" class="diagSet"><span class="diagRoom icon room @{room}"></span><span class="diagChance"></span></div>
     </div>      
   <script src="app.js"></script>
 </body>
