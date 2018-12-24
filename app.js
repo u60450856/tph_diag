@@ -183,16 +183,17 @@ let APP = (function(init) {
   const _cmdSearch = function (ev) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
+    let t = document.querySelectorAll('.illnessList .illness.selected');
     let arrSelectedIllnesses = [].map.call(
-          document.querySelectorAll('.illnessList .illness.selected'),
+          t,
           item=>item.getAttribute('data-illness')
         );
-    console.log(arrSelectedIllnesses);
+    console.log(t,arrSelectedIllnesses);
 
 
 
 
-    
+
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
