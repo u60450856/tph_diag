@@ -139,11 +139,6 @@ let APP = (function(init) {
                           return t;
                         },tplIllness);
                        //.reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
-
-
-
-
-
   };
 
   let tplIllnessList = '';
