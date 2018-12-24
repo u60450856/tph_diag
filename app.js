@@ -132,13 +132,10 @@ let APP = (function(init) {
           const map = {'@{name}': illness.name,
                        '@{room}' : illness.room,
                       };
-          return Object.keys(map)
-                       .reduce((tpl,token)=>{
-                          console.log(('replaceMultiple' in String),typeof tpl, tpl);
-                          let t = tpl.replaceMultiple(token, map[token]);
-                          return t;
-                        },tplIllness);
-                       //.reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
+          //return Object.keys(map)
+          //             .reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
+          //             },tplIllness);
+          return String.replaceMultiple(tplIllness,map);
   };
 
   let tplIllnessList = '';
