@@ -198,6 +198,10 @@ let APP = (function(init) {
     arrDiagRooms.forEach(dr=>{ objDiagRooms[dr.room]=dr.bitmask; });    
     console.log('199',objDiagRooms);
 
+
+
+    
+
     //Считаем шанс диагностики для заболевания конкретным diagSet
     const calcDiagChance = function (illness, diagSet){
       let dc = Object.keys(objDiagRooms).reduce(chance, dr => {
