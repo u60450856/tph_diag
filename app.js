@@ -200,7 +200,7 @@ let APP = (function(init) {
       return dc;
     };
     let arrDiagChance = [];
-        arrDiagChance = arrSelectedIllnesses.map(illness=>>{
+        arrDiagChance = arrSelectedIllnesses.map(illness=>{
                           let t = [];
                           arrDiagSets.forEach(ds=>{
                             t.push({ds:calcDiagChance(illness,diagSet)});
