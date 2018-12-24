@@ -184,7 +184,7 @@ let APP = (function(init) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
     let arrSelectedIllnesses = [].map.call(
-          document.querySelectorAll('#illnessList .illness.selected');
+          document.querySelectorAll('#illnessList .illness.selected')
           ,item=>item.getAttribute('data-name')
         );
     console.log(t,arrSelectedIllnesses);
