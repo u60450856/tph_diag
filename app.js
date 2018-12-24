@@ -191,17 +191,11 @@ let APP = (function(init) {
     const bitmaskGenerate = function(n){return bitmaskRange(Math.pow(2, n))};
     let arrDiagSets= bitmaskGenerate(11);
     // конвертируем массив в объект вида  ROOM:BITMASK
-    console.log('194',_data.values,_data.values['diagRooms']);
     let arrDiagRooms = [];
     _data.values.forEach((value)=>{ if(value.name=='diagRooms'){ arrDiagRooms = value.value; } });
-    console.log('197',arrDiagRooms);
     let objDiagRooms = {};
     arrDiagRooms.forEach(dr=>{ objDiagRooms[dr.room]=dr.bitmask; });    
     console.log('199',objDiagRooms);
-
-
-
-    
     //Считаем шанс диагностики для заболевания конкретным diagSet
     const calcDiagChance = function (illness, diagSet){
       let dc = Object.keys(objDiagRooms).reduce(chance, dr => {
@@ -211,6 +205,7 @@ let APP = (function(init) {
       },1);
       return dc;
     };
+    console.log(arrSelectedIllnesses);
     let arrDiagChance = [];
         arrDiagChance = arrSelectedIllnesses.map(illness=>{
                           let t = [];
