@@ -235,7 +235,7 @@ let APP = (function(init) {
               //_showSearchBtn();
               _bindCmds([
                           ['clear'          ,'btnClear'   ,'click',false,_cmdClear],
-                          ['search'         ,'bnSearch'   ,'click',false,_cmdSearch],
+                          ['search'         ,'btnSearch'   ,'click',false,_cmdSearch],
                           ['illnessSelected','illnessList','click',false,_cmdIllnessSelect],
                        ]);
             });
