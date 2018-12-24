@@ -203,7 +203,7 @@ let APP = (function(init) {
       let dc = Object.keys(objDiagRooms).reduce(chance, dr => {
         if(diagSet & objDiagRooms[dr]){
            return chance * illness.diag[dr];
-        };
+        }else{return chance};
       },1);
       return dc;
     };
@@ -224,7 +224,7 @@ let APP = (function(init) {
 
 
 
-    
+
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
