@@ -185,6 +185,7 @@ let APP = (function(init) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
     let arrSelectedIllnesses = document.querySelectorAll('.illnessList ,illness.selected') || [];
+    console.log(arrSelectedIllnesses);
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
@@ -206,6 +207,8 @@ let APP = (function(init) {
       return dc;
     };
     console.log(arrSelectedIllnesses);
+
+    
     let arrDiagChance = [];
         arrDiagChance = arrSelectedIllnesses.map(illness=>{
                           let t = [];
