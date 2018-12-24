@@ -200,7 +200,7 @@ let APP = (function(init) {
     console.log('199',objDiagRooms);
     //Считаем шанс диагностики для заболевания конкретным diagSet
     const calcDiagChance = function (illness, diagSet){
-      let dc = Object.keys(objDiagRooms).reduce(chance, dr => {
+      let dc = Object.keys(objDiagRooms).reduce((chance, dr) => {
         if(diagSet & objDiagRooms[dr]){
            return chance * illness.diag[dr];
         }else{return chance};
@@ -218,7 +218,7 @@ let APP = (function(init) {
                                       illness.diagChance = t;
                                       return illness;
                                     });
-    cosole.log(arrDiagChance);
+    console.log(arrDiagChance);
 
 
 
