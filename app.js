@@ -136,6 +136,10 @@ let APP = (function(init) {
                        .reduce((tpl,token)=>{
                           console.log(typeof tpl, tpl);
                           return tpl.replaceMultiple(token, map[token]);
+
+
+
+                          
                         },tplIllness);
                        //.reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
 
