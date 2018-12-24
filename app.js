@@ -219,6 +219,12 @@ let APP = (function(init) {
                                       return illness;
                                     });
     cosole.log(arrDiagChance);
+
+
+
+
+
+    
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
