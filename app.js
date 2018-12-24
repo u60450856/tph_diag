@@ -132,9 +132,6 @@ let APP = (function(init) {
           const map = {'@{name}': illness.name,
                        '@{room}' : illness.room,
                       };
-          //return Object.keys(map)
-          //             .reduce((tpl,token)=>tpl.replace(token, map[token]),tplIllness);
-          //             },tplIllness);
           return String.replaceMultiple(tplIllness,map);
   };
 
@@ -187,6 +184,7 @@ let APP = (function(init) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
     let arrSelectedIllnesses = document.querySelectorAll('.illnessList .illness.selected') || [];
+    arrSelectedIllnesses.map(item=>item.getAttribute('data-illness'));
     console.log(arrSelectedIllnesses);
 
 
