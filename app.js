@@ -258,12 +258,6 @@ let APP = (function(init) {
                                return  0;
     });
     console.log(260,t);
-    
-
-
-
-
-
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
