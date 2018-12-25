@@ -252,7 +252,7 @@ let APP = (function(init) {
       illness.diagChance.forEach((dc,idx)=>{
           try {
             if(t[idx].value <= dc){return;}
-          }catch(e){return;}
+          }catch(e){}
           t[idx]={'id':idx,'value':dc};
           /*
           if(t[idx]){
