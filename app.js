@@ -191,13 +191,13 @@ let APP = (function(init) {
         );
         arrSelectedIllnesses = [].map.call(arrSelectedIllnesses, illnessName=>{
           let arrIllnesses = {};
-          _data.values.forEach((value)=>{ if(value.name=='illnesses'){ arrIllnesses = value; }     });
+          _data.values.forEach((value)=>{ if(value.name=='illnesses'){ arrIllnesses = value.value; }     });
           console.log(arrIllnesses);
 
 
 
 
-          
+
           let result = arrIllnesses.forEach((illness)=>{
             if(illness.name==illnessName) {return illness;}else{return {};}
           });
