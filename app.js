@@ -257,7 +257,7 @@ let APP = (function(init) {
       if (a.value < b.value) { return -1; }
                                return  0;
     });
-    console.log(259,t);
+    console.log(260,t);
     
 
 
