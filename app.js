@@ -220,15 +220,14 @@ let APP = (function(init) {
     const calcDiagChance = function (illness, diagSet){
       let dc = Object.keys(objDiagRooms).reduce((chance, dr) => {
         if(diagSet & objDiagRooms[dr]){
-           //return chance * illness.diag[dr];
-           return 1-chance + illness.diag[dr];
+           return chance + illness.diag[dr];
         }else{return chance};
-      },1);
+      },0);
       return dc;
     };
 
     let arrDiagChance = [].map.call(arrSelectedIllnesses, illness=>{
-                                      let t = [];
+                                      let t = {};
                                       arrDiagSets.forEach(ds=>{
                                         //t.push({ds:calcDiagChance(illness,ds)});
                                         t[ds]=calcDiagChance(illness,ds);
@@ -239,7 +238,7 @@ let APP = (function(init) {
     console.log(238,arrDiagChance);
     arrDiagChance.forEach((illness)=>{
       let t = illness.diagChance.filter((dc)=>{
-        return (dc >= 0.3);
+        return (dc >= 0.7);
       });
       console.log(243,illness,t);
     });
