@@ -250,6 +250,7 @@ let APP = (function(init) {
       });
     });
     console.log(252,arrDiagChance,t);
+    t=t.filter((item)=>((objDiagRooms.GP | item.id)&&(objDiagRooms.TREAT | item.id)));
     t=t.filter((item)=>(item.value>=0.7));
     t.sort(function (a, b) {
       if (a.value > b.value) { return  1; }
