@@ -227,7 +227,7 @@ let APP = (function(init) {
     };
 
     let arrDiagChance = [].map.call(arrSelectedIllnesses, illness=>{
-                                      let t = {};
+                                      let t = [];
                                       arrDiagSets.forEach(ds=>{
                                         //t.push({ds:calcDiagChance(illness,ds)});
                                         t[ds]=calcDiagChance(illness,ds);
@@ -236,13 +236,15 @@ let APP = (function(init) {
                                       return illness;
                                     });
     console.log(238,arrDiagChance);
+    let t = {};
     arrDiagChance.forEach((illness)=>{
-      let t = illness.diagChance.filter((dc)=>{
-        return (dc >= 0.7);
-      });
-      console.log(243,illness,t);
+      //let lT = illness.diagChance.filter((dc)=>{ return (dc >= 0.7); });
+      illness.diagChance.forEach((dc,idx)=>{
+        t[idx] = dc; }
+      );
+      //console.log(243,illness,t);
     });
-    console.log(245,arrDiagChance);
+    console.log(245,arrDiagChance,t);
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
