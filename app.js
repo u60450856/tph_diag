@@ -205,7 +205,7 @@ let APP = (function(init) {
             for(let i=1;i<=arrIllnesses.length;i++){
               if(arrIllnesses[i].name==illnessName) { return arrIllnesses[i]; }
             }
-          };
+          }
         );
     console.log(arrSelectedIllnesses);
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
