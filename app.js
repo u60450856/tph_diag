@@ -204,12 +204,6 @@ let APP = (function(init) {
           }
         );
     console.log(arrSelectedIllnesses);
-
-
-
-
-
-    
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
@@ -218,7 +212,7 @@ let APP = (function(init) {
     // конвертируем массив в объект вида  ROOM:BITMASK
     let arrDiagRooms = [];
 ///    _data.values.forEach((value)=>{ if(value.name=='diagRooms'){ arrDiagRooms = value.value; } });
-    arrDiagRooms = _data.values['diagRoom'];
+    arrDiagRooms = _data.values['diagRooms'];
     let objDiagRooms = {};
     arrDiagRooms.forEach(dr=>{ objDiagRooms[dr.room]=dr.bitmask; });    
     console.log('199',objDiagRooms);
