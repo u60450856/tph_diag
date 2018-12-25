@@ -189,10 +189,11 @@ let APP = (function(init) {
           document.querySelectorAll('#illnessList .illness.selected')
           ,item=>item.getAttribute('data-name')
         );
-    let arrSelectedIllnesses = [].map.call(arrSelectedIllnesses, illnessName=>{
-          let lData = {};
-          _data.values.forEach((value)=>{
-            if(value.name=='illnesses'){ lData = value; } 
+        arrSelectedIllnesses = [].map.call(arrSelectedIllnesses, illnessName=>{
+          let arrIllnesses = {};
+          _data.values.forEach((value)=>{ if(value.name=='illnesses'){ arrIllnesses = value; }     });
+          let result = arrIllnesses.forEach((illness))=>{
+            if(illness.name==illnessName) {return illness;}else{return {};};
           });
     });
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
