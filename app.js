@@ -231,12 +231,11 @@ let APP = (function(init) {
                                       arrDiagSets.forEach(ds=>{
                                         //t.push({ds:calcDiagChance(illness,ds)});
                                         t[ds]=calcDiagChance(illness,ds);
-                                        console.log(ds);
                                       });
                                       illness.diagChance = t;
                                       return illness;
                                     });
-    console.log(238,refreshGithubPages,arrDiagChance);
+    console.log(238,arrDiagChance);
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
