@@ -251,7 +251,12 @@ let APP = (function(init) {
     });
     console.log(252,arrDiagChance,t);
     t=t.filter((item)=>(item.value>=0.7));
-    console.log(254,t);
+    t.sort(function (a, b) {
+      if (a.value > b.value) { return  1; }
+      if (a.value < b.value) { return -1; }
+                               return  0;
+    });
+    console.log(259,t);
     
 
 
