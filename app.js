@@ -237,11 +237,12 @@ let APP = (function(init) {
                                     });
     console.log(238,arrDiagChance);
     arrDiagChance.forEach((illness)=>{
-      illness.diagChance = illness.diagChance.filter((dc)=>{
+      let t = illness.diagChance.filter((dc)=>{
         return (dc > 0.7);
       });
+      console.log(243,illness,t);
     });
-    console.log(244,arrDiagChance);
+    console.log(245,arrDiagChance);
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
