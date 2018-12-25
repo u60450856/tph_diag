@@ -80,9 +80,10 @@ let APP = (function(init) {
               throw new TypeError("Oops, we haven't got JSON!");
             })// then
            .then((json)=>{
-              _data.values.push({name:lData.id,value:json});
-              _data[lData.id] = json;
-              _data.ready=(_data.values.length==data.length);
+              //_data.values.push({name:lData.id,value:json});
+              //_data.ready=(_data.values.length==data.length);
+              _data.values[lData.id] = json;
+              _data.ready=(Object.keys(_data.values).length==data.length);
             })// then
            .catch((e)=>{
               console.log('Data load error.',lData.id,e);
@@ -152,13 +153,12 @@ let APP = (function(init) {
             }
           }
           var lData = {};
-          _data.values.forEach((value)=>{
-            if(value.name=='illnesses'){ lData = value; } 
-          });
+          //_data.values.forEach((value)=>{
+          //   if(value.name=='illnesses'){ lData = value.value; } 
+          //});
+          lData = _data.values['illnesses'];
 
-    //      lData = _data.values[1];
-    //      console.log(_data.values,_data.values.length,lData);
-          return lData.value.reduce((theme,illness)=>{
+          return lData.reduce((theme,illness)=>{
                                return theme + _themeIllness(illness);
                              },tplIllnessList);
   };
@@ -191,7 +191,8 @@ let APP = (function(init) {
         );
 
         let arrIllnesses = {};
-        _data.values.forEach((value)=>{ if(value.name=='illnesses'){ arrIllnesses = value.value; }     });
+        // _data.values.forEach((value)=>{ if(value.name=='illnesses'){ arrIllnesses = value.value; }     });
+        arrIllnesses =_data.values['illnesses'];
         arrSelectedIllnesses = [].map.call(arrSelectedIllnesses,
           (illnessName)=>{
           let result;
@@ -203,11 +204,6 @@ let APP = (function(init) {
           }
         );
     console.log(arrSelectedIllnesses);
-
-
-
-
-    
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
@@ -215,7 +211,8 @@ let APP = (function(init) {
     let arrDiagSets= bitmaskGenerate(11);
     // конвертируем массив в объект вида  ROOM:BITMASK
     let arrDiagRooms = [];
-    _data.values.forEach((value)=>{ if(value.name=='diagRooms'){ arrDiagRooms = value.value; } });
+///    _data.values.forEach((value)=>{ if(value.name=='diagRooms'){ arrDiagRooms = value.value; } });
+    arrDiagRooms = _data.values['diagRoom'];
     let objDiagRooms = {};
     arrDiagRooms.forEach(dr=>{ objDiagRooms[dr.room]=dr.bitmask; });    
     console.log('199',objDiagRooms);
