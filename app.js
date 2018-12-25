@@ -242,6 +242,11 @@ let APP = (function(init) {
       });
     });
     console.log(244,arrDiagChance);
+
+
+
+
+    
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
