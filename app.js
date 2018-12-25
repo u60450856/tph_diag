@@ -190,7 +190,7 @@ let APP = (function(init) {
           ,item=>item.getAttribute('data-name')
         );
 
-        let arrIllnesses = arrIllnesses =_data.values['illnesses'] || {};
+        let arrIllnesses = =_data.values['illnesses'] || {};
         arrSelectedIllnesses = [].map.call(arrSelectedIllnesses,
           (illnessName)=>{
           /*
