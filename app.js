@@ -190,7 +190,7 @@ let APP = (function(init) {
           ,item=>item.getAttribute('data-name')
         );
 
-        let arrIllnesses = =_data.values['illnesses'] || {};
+        let arrIllnesses = _data.values['illnesses'] || {};
         arrSelectedIllnesses = [].map.call(arrSelectedIllnesses,
           (illnessName)=>{
           /*
@@ -213,7 +213,7 @@ let APP = (function(init) {
 
 
 
-    
+
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
