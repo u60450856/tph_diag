@@ -236,7 +236,7 @@ let APP = (function(init) {
                                       illness.diagChance = t;
                                       return illness;
                                     });
-    console.log(238,arrDiagChance);
+    console.log(238,refreshGithubPages,arrDiagChance);
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
