@@ -237,11 +237,6 @@ let APP = (function(init) {
                                       return illness;
                                     });
     console.log(238,arrDiagChance);
-
-
-
-
-    
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
