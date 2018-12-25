@@ -249,7 +249,9 @@ let APP = (function(init) {
       //console.log(243,illness,t);
       });
     });
-    console.log(245,arrDiagChance,t);
+    console.log(252,arrDiagChance,t);
+    t=t.filter((item)=>(item.value>=0.7));
+    console.log(254,t);
     
 
 
