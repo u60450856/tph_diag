@@ -189,15 +189,20 @@ let APP = (function(init) {
           document.querySelectorAll('#illnessList .illness.selected')
           ,item=>item.getAttribute('data-name')
         );
-        arrSelectedIllnesses = [].map.call(arrSelectedIllnesses, illnessName=>{
-          let arrIllnesses = {};
-          _data.values.forEach((value)=>{ if(value.name=='illnesses'){ arrIllnesses = value.value; }     });
-          console.log(arrIllnesses);
 
-          let result = arrIllnesses.forEach((illness)=>{
-            if(illness.name==illnessName) {return illness;}else{return {};}
-          });
-    });
+        let arrIllnesses = {};
+        _data.values.forEach((value)=>{ if(value.name=='illnesses'){ arrIllnesses = value.value; }     });
+        arrSelectedIllnesses = [].map.call(arrSelectedIllnesses,
+          (illnessName)=>{
+          let result;
+          arrIllnesses
+          .forEach((illness)=>{
+                    if(illness.name==illnessName) {result=illness;}
+                  });
+            return result;
+          }
+        );
+    console.log(arrSelectedIllnesses);
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
@@ -218,7 +223,6 @@ let APP = (function(init) {
       },1);
       return dc;
     };
-    console.log(arrSelectedIllnesses);
 
     let arrDiagChance = [].map.call(arrSelectedIllnesses, illness=>{
                                       let t = [];
