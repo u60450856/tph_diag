@@ -236,22 +236,26 @@ let APP = (function(init) {
                                       return illness;
                                     });
     console.log(238,arrDiagChance);
-    let t = arrDiagSets;
+    let t = [];//arrDiagSets;
     arrDiagChance.forEach((illness)=>{
-      //let lT = illness.diagChance.filter((dc)=>{ return (dc >= 0.7); });
       illness.diagChance.forEach((dc,idx)=>{
-          if(t[idx] > dc){t[idx]=dc}; 
-        }
-      );
+          if(t[idx]){
+            if(t[idx].value > dc){
+              t[idx]={'id':idx,'value':dc};
+             };  
+          }else{
+            t[idx]={'id':idx,'value':dc};
+          }; 
       //console.log(243,illness,t);
+      });
     });
     console.log(245,arrDiagChance,t);
-
-
-
-
-
     
+
+
+
+
+
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
