@@ -245,7 +245,7 @@ let APP = (function(init) {
     arrDiagChance.forEach((illness)=>{
       illness.diagChance.forEach((dc,idx)=>{
           try {
-            if(t[idx].value <= dc){return;)
+            if(t[idx].value <= dc){return;}
           }catch(e){return;}
           t[idx]={'id':idx,'value':dc};
           /*
