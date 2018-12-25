@@ -220,7 +220,8 @@ let APP = (function(init) {
     const calcDiagChance = function (illness, diagSet){
       let dc = Object.keys(objDiagRooms).reduce((chance, dr) => {
         if(diagSet & objDiagRooms[dr]){
-           return chance * illness.diag[dr];
+           //return chance * illness.diag[dr];
+           return 1-chance + illness.diag[dr];
         }else{return chance};
       },1);
       return dc;
@@ -238,7 +239,7 @@ let APP = (function(init) {
     console.log(238,arrDiagChance);
     arrDiagChance.forEach((illness)=>{
       let t = illness.diagChance.filter((dc)=>{
-        return (dc > 0.7);
+        return (dc >= 0.3);
       });
       console.log(243,illness,t);
     });
