@@ -81,6 +81,7 @@ let APP = (function(init) {
             })// then
            .then((json)=>{
               _data.values.push({name:lData.id,value:json});
+              _data[lData.id] = json;
               _data.ready=(_data.values.length==data.length);
             })// then
            .catch((e)=>{
@@ -114,7 +115,7 @@ let APP = (function(init) {
     };
   };
 
-  let tplIllness = '';
+  let tplIllness = '';let illnessId = 0;
   let _themeIllness = function(illness){
           if(tplIllness.length===0){
             let el = document.getElementById('tplIllness');
@@ -130,7 +131,8 @@ let APP = (function(init) {
           }
 
           const map = {'@{name}': illness.name,
-                       '@{room}' : illness.room,
+                       '@{room}': illness.room,
+                       '@{id}'  : illnessId,
                       };
           return String.replaceMultiple(tplIllness,map);
   };
@@ -187,6 +189,12 @@ let APP = (function(init) {
           document.querySelectorAll('#illnessList .illness.selected')
           ,item=>item.getAttribute('data-name')
         );
+    let arrSelectedIllnesses = [].map.call(arrSelectedIllnesses, illnessName=>{
+          let lData = {};
+          _data.values.forEach((value)=>{
+            if(value.name=='illnesses'){ lData = value; } 
+          });
+    });
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
     const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
@@ -208,7 +216,6 @@ let APP = (function(init) {
       return dc;
     };
     console.log(arrSelectedIllnesses);
-
 
     let arrDiagChance = [].map.call(arrSelectedIllnesses, illness=>{
                                       let t = [];
