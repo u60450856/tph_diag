@@ -246,6 +246,12 @@ let APP = (function(init) {
       //console.log(243,illness,t);
     });
     console.log(245,arrDiagChance,t);
+
+
+
+
+
+    
     //sortDiagsSets()
     //theneDiagSets()
     ///themeDiagSet()
