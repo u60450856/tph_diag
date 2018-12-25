@@ -236,11 +236,12 @@ let APP = (function(init) {
                                       return illness;
                                     });
     console.log(238,arrDiagChance);
-    let t = {};
+    let t = arrDiagSets;
     arrDiagChance.forEach((illness)=>{
       //let lT = illness.diagChance.filter((dc)=>{ return (dc >= 0.7); });
       illness.diagChance.forEach((dc,idx)=>{
-        t[idx] = dc; }
+          if(t[idx] > dc){t[idx]=dc}; 
+        }
       );
       //console.log(243,illness,t);
     });
