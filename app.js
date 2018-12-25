@@ -190,11 +190,10 @@ let APP = (function(init) {
           ,item=>item.getAttribute('data-name')
         );
 
-        let arrIllnesses = {};
-        // _data.values.forEach((value)=>{ if(value.name=='illnesses'){ arrIllnesses = value.value; }     });
-        arrIllnesses =_data.values['illnesses'];
+        let arrIllnesses = arrIllnesses =_data.values['illnesses'] || {};
         arrSelectedIllnesses = [].map.call(arrSelectedIllnesses,
           (illnessName)=>{
+          /*
           let result;
           arrIllnesses
           .forEach((illness)=>{
@@ -202,6 +201,11 @@ let APP = (function(init) {
                   });
             return result;
           }
+          */
+            for(let i=1;i<=arrIllnesses.length;i++){
+              if(arrIllnesses[i].name==illnessName) { return arrIllnesses[i]; }
+            }
+          };
         );
     console.log(arrSelectedIllnesses);
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
@@ -220,8 +224,10 @@ let APP = (function(init) {
     const calcDiagChance = function (illness, diagSet){
       let dc = Object.keys(objDiagRooms).reduce((chance, dr) => {
         if(diagSet & objDiagRooms[dr]){
-           return chance + illness.diag[dr];
-        }else{return chance};
+           //return chance + illness.diag[dr];
+           chance += illness.diag[dr];
+        }
+        return chance;
       },0);
       return dc;
     };
@@ -229,7 +235,6 @@ let APP = (function(init) {
     let arrDiagChance = [].map.call(arrSelectedIllnesses, illness=>{
                                       let t = [];
                                       arrDiagSets.forEach(ds=>{
-                                        //t.push({ds:calcDiagChance(illness,ds)});
                                         t[ds]=calcDiagChance(illness,ds);
                                       });
                                       illness.diagChance = t;
@@ -239,13 +244,19 @@ let APP = (function(init) {
     let t = [];//arrDiagSets;
     arrDiagChance.forEach((illness)=>{
       illness.diagChance.forEach((dc,idx)=>{
+          try {
+            if(t[idx].value <= dc){return;)
+          }catch(e){return;}
+          t[idx]={'id':idx,'value':dc};
+          /*
           if(t[idx]){
             if(t[idx].value > dc){
               t[idx]={'id':idx,'value':dc};
              };  
           }else{
             t[idx]={'id':idx,'value':dc};
-          }; 
+          };
+          */ 
       //console.log(243,illness,t);
       });
     });
@@ -255,7 +266,7 @@ let APP = (function(init) {
     t.sort(function (a, b) {
       if (a.value > b.value) { return  1; }
       if (a.value < b.value) { return -1; }
-                               return  0;
+      return  0;
     });
     console.log(260,t);
     //sortDiagsSets()
