@@ -156,7 +156,7 @@ let APP = (function(init) {
                tplDiagRoom = _getThemeTpl('tplDiagRoom', tplDiagRoom); 
             }
 
-            const map = {'@{room}': diagRoom};          
+            const map = {'@{id}': diagRoom.room};          
             return String.replaceMultiple(tplDiagRoom,map);
     };  
     //themeDiagSet()
@@ -165,13 +165,13 @@ let APP = (function(init) {
             if(tplDiagSet.length===0){
                tplDiagSet = _getThemeTpl('tplDiagSet', tplDiagSet); 
             }
-            let lData = [].reduce.call(diagSet
+            //let lData = [];
+            let arrDiagRooms = _data.values['diagRooms'].filter(diagRoom=>(diagRoom & diagSet.id));
+            let lData = [].reduce.call(arrDiagRooms
                                       ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
                                       ,'');
             const map = {'@{items}': lData,
-                         '@{chanse}': diagSet.chance};          
-            console.log(diagSet);
-            console.log(diagSet);
+                         '@{value}': Math.round(diagSet.value*100,1};          
             console.log(diagSet);
             return String.replaceMultiple(tplDiagSet,map);
     };
