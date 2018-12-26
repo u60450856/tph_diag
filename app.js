@@ -37,6 +37,18 @@ var clearNode = function(node) {
       node.removeChild(node.firstChild);
   }
 };
+var cloneNode = function(el) {
+  'use strict';
+  if(el !== null){ 
+    let p = document.createElement('div');
+    let cel = el.cloneNode(true);
+        cel.removeAttribute('id');            
+        p.appendChild(cel);            
+        cel = el.cloneNode();
+        cel.id='';
+        return  p; 
+  }
+};
 var bitCount = function(u) {
     const uCount = u - ((u >> 1) & 0o33333333333) -((u >> 2) & 0o11111111111);
     return ((uCount + (uCount >> 3)) & 0o30707070707) % 63;
@@ -118,25 +130,15 @@ let APP = (function(init) {
   let tplIllnessList = '';
   const _themeIllnessList = function(){
           if(tplIllnessList.length===0){
+            try {
             let el = document.getElementById('tplIllnessList');
-            if(el !== null){ 
-              let p = document.createElement('div');
-              let cel = el.cloneNode(true);
-                  cel.removeAttribute('id');            
-                  p.appendChild(cel);            
-                  cel = el.cloneNode();
-                  cel.id='';
-              tplIllnessList = p.innerHTML; 
-            }
+                el = cloneNode(el);
+                tplIllnessList = el.innerHTML; 
+            } catch(e) {}
           }
-          var lData = _data.values['illnesses'];
-          lData = [].reduce.call(lData,
-                                  (theme,illness)=>{
-                                    return theme + _themeIllness(illness);
-                                  },
-                                  '');
-          console.log(lData);
-          //return lData;
+          let lData = [].reduce.call(_data.values['illnesses']
+                                    ,(theme,illness)=>(theme + _themeIllness(illness))
+                                    ,'');
           const map = {'@{items}': lData};          
           return String.replaceMultiple(tplIllnessList,map);
   };
@@ -164,15 +166,16 @@ let APP = (function(init) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
     let arrIllnesses = _data.values['illnesses'] || {};
-    let arrSelectedIllnesses = [].map.call(document.querySelectorAll('#illnessList .illness.selected'), (item)=>{
-            try {
-              let illnessName = item.getAttribute('data-name')
-              for(let i=0;i<=arrIllnesses.length;i++){
-                let illness = arrIllnesses[i];
-                if(illness.name==illnessName) { return illness; }
-              }
-            }catch(e){}
-        });
+    let arrSelectedIllnesses = [].map.call(document.querySelectorAll('#illnessList .illness.selected')
+                                          ,(item)=>{
+                                            try {
+                                              let illnessName = item.getAttribute('data-name')
+                                              for(let i=0;i<=arrIllnesses.length;i++){
+                                                let illness = arrIllnesses[i];
+                                                if(illness.name==illnessName) { return illness; }
+                                              }
+                                            }catch(e){}
+                                        });
     console.log(arrSelectedIllnesses);  
 
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
@@ -220,19 +223,19 @@ let APP = (function(init) {
     t=t.filter((item)=>(bitCount(item.id)<=7));
     t=t.filter((item)=>((objDiagRooms.GP & item.id)&&(objDiagRooms.TREAT & item.id)&&(objDiagRooms.WARD & item.id)&&(objDiagRooms.GP2 & item.id)));
     t=t.filter((item)=>(item.value>=0.7));
+    //sortDiagsSets()
     t.sort(function (a, b) {
       if (a.value > b.value) { return -1; }
       if (a.value < b.value) { return  1; }
       return  0;
     });
-    console.log(223,t);  
-
-
-
-
-
-    //sortDiagsSets()
+    console.log(225,t);  
     //theneDiagSets()
+    const 
+
+
+
+
     ///themeDiagSet()
     ////themeDiagRoom()
     //showDiagSets()
