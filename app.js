@@ -166,7 +166,7 @@ let APP = (function(init) {
                tplDiagSet = _getThemeTpl('tplDiagSet', tplDiagSet); 
             }
             //let lData = [];
-            let arrDiagRooms = _data.values['diagRooms'].filter(diagRoom=>!(diagRoom.bitmask & diagSet.id));
+            let arrDiagRooms = _data.values['diagRooms'].filter(diagRoom=>(diagRoom.bitmask & diagSet.id));
             let lData = [].reduce.call(arrDiagRooms
                                       ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
                                       ,'');
