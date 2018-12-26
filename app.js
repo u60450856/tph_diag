@@ -141,11 +141,6 @@ let APP = (function(init) {
           return String.replaceMultiple(tplIllnessList,map);
   };
 
-
-
-
-
-
   const _showIllnessList = function(theme){
     let el = document.getElementById('illnessList');
     if (el === null){ return; }
