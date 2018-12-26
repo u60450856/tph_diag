@@ -155,11 +155,6 @@
   "diag":{"GP":0.25,"GD":0.12,"CARDIO":0.07,"WARD":0.25,"PSY":0.12,"FLUID":0.12,"XRAY":0.25,"MEGA":0.25,"DNA":0.12,"GP2":0.05,"TREAT":0.20}
 },
 {
-  "name":"Floppy Discs",
-  "room":"SURGERY",
-  "diag":{"GP":0.45,"GD":0.08,"CARDIO":0.08,"WARD":0.20,"PSY":0.08,"FLUID":0.18,"XRAY":0.45,"MEGA":0.45,"DNA":0.15,"GP2":0.09  ,"TREAT":0.60}
-},
-{
   "name":"Denim Genes",
   "room":"DNA",
   "diag":{"GP":0.25,"GD":0.10,"CARDIO":0.10,"WARD":0.10,"PSY":0.10,"FLUID":0.25,"XRAY":0.10,"MEGA":0.25,"DNA":0.25,"GP2":0.10  ,"TREAT":0.60}
@@ -183,6 +178,11 @@
   "name":"Touch of Midas",
   "room":"DNA",
   "diag":{"GP":0.10,"GD":0.09,"CARDIO":0.09,"WARD":0.09,"PSY":0.20,"FLUID":0.09,"XRAY":0.09,"MEGA":0.20,"DNA":0.40,"GP2":0.08,"TREAT":0.20}
+},
+{
+  "name":"Floppy Discs",
+  "room":"SURGERY",
+  "diag":{"GP":0.45,"GD":0.08,"CARDIO":0.08,"WARD":0.20,"PSY":0.08,"FLUID":0.18,"XRAY":0.45,"MEGA":0.45,"DNA":0.15,"GP2":0.09  ,"TREAT":0.60}
 },
 {
   "name":"Gurning Loins",

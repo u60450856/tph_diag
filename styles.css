@@ -70,7 +70,7 @@ button {
   text-align: right;
   color: rgb(214,197,48);
 }
-#illnessList{
+#illnessList > .inner{
   display: flex;
   /*justify-content: center;*/
   align-items: flex-start;
