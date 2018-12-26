@@ -129,15 +129,15 @@ let APP = (function(init) {
               tplIllnessList = p.innerHTML; 
             }
           }
-          var lData = {};
-          //_data.values.forEach((value)=>{
-          //   if(value.name=='illnesses'){ lData = value.value; } 
-          //});
-          lData = _data.values['illnesses'];
-
-          return lData.reduce((theme,illness)=>{
-                               return theme + _themeIllness(illness);
-                             },tplIllnessList);
+          var lData = _data.values['illnesses'];
+          lData = [].reduce.call(lData,
+                                  (theme,illness)=>{
+                                    return theme + _themeIllness(illness);
+                                  },
+                                  '');
+          //return lData;
+          const map = {'@{items}': lData};          
+          return String.replaceMultiple(tplIllness,map);
   };
 
   const _showIllnessList = function(theme){
@@ -216,12 +216,12 @@ let APP = (function(init) {
       });
     });
     console.log(214,arrDiagChance,t);
-    t=t.filter((item)=>(bitCount(item.id)<=6));
+    t=t.filter((item)=>(bitCount(item.id)<=7));
     t=t.filter((item)=>((objDiagRooms.GP & item.id)&&(objDiagRooms.TREAT & item.id)&&(objDiagRooms.WARD & item.id)&&(objDiagRooms.GP2 & item.id)));
     t=t.filter((item)=>(item.value>=0.7));
     t.sort(function (a, b) {
-      if (a.value > b.value) { return  1; }
-      if (a.value < b.value) { return -1; }
+      if (a.value > b.value) { return -1; }
+      if (a.value < b.value) { return  1; }
       return  0;
     });
     console.log(223,t);  
