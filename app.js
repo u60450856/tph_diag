@@ -216,7 +216,7 @@ let APP = (function(init) {
       });
     });
     console.log(214,arrDiagChance,t);
-    t=t.filter((item)=>(bitCount(item.id)>=5));
+    t=t.filter((item)=>(bitCount(item.id)<=5));
     t=t.filter((item)=>((objDiagRooms.GP & item.id)&&(objDiagRooms.TREAT & item.id)&&(objDiagRooms.WARD & item.id)&&(objDiagRooms.GP2 & item.id)));
     t=t.filter((item)=>(item.value>=0.7));
     t.sort(function (a, b) {
