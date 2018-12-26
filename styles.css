@@ -128,3 +128,6 @@ button {
 .room.icon.SHOCK    {background-image: url(image/room/SHOCK.png);}
 .room.icon.SURGERY  {background-image: url(image/room/SURGERY.png);}
 .room.icon.TURTLE   {background-image: url(image/room/TURTLE.png);}
+
+
+.diagRoom.icon {display: inline-block;}
