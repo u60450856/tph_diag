@@ -165,7 +165,7 @@ let APP = (function(init) {
             if(tplDiagSet.length===0){
                tplDiagSet = _getThemeTpl('tplDiagSet', tplDiagSet); 
             }
-            let lData = [].reduce.call(diagRooms
+            let lData = [].reduce.call(diagSet
                                       ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
                                       ,'');
             const map = {'@{items}': lData,
