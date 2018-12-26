@@ -270,6 +270,11 @@ let APP = (function(init) {
     });
     console.log(225,t);  
    _showDiagSetList(_themeDiagetList(t));
+
+
+
+
+   
   };
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
