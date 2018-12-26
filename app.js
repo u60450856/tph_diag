@@ -56,8 +56,8 @@ var bitCount = function(u) {
 // **********************************************
 let APP = (function(init) {
   'use strict';
-  let _data = {ready: false, values: []};
 
+  let _data = {ready: false, values: []};
   const _getData = function(data,callback){
     data.forEach((lData)=>{
            fetch(lData.url)
@@ -105,19 +105,27 @@ let APP = (function(init) {
     };
   };
 
+  let _theme = {};
+  // const _getThemeTpl = function(tplId){if not themevalues[tplId]}
+  const _getThemeTpl = function(tplId,def){
+    try {
+    let el = document.getElementById(tplId);
+        el = cloneNode(el);
+        return el.innerHTML; 
+    } catch(e) {return def || '';}
+  };
+  const _renderTheme = function(theme,targetId){
+    try {
+      let el = document.getElementById(targetId);
+      let t = HtmlToDom(theme);
+      clearNode(el);
+      el.appendChild(t);
+    } catch(e) {}
+  };
   let tplIllness = '';let illnessId = 0;
   let _themeIllness = function(illness){
           if(tplIllness.length===0){
-            let el = document.getElementById('tplIllness');
-            if(el !== null){ 
-              let p = document.createElement('div');
-              let cel = el.cloneNode(true);
-                  cel.removeAttribute('id');            
-                  p.appendChild(cel);            
-                  cel = el.cloneNode();
-                  cel.id='';
-              tplIllness = p.innerHTML; 
-            }
+            tplIllness = _getThemeTpl('tplIllness', tplIllness); 
           }
 
           const map = {'@{name}': illness.name,
@@ -130,11 +138,7 @@ let APP = (function(init) {
   let tplIllnessList = '';
   const _themeIllnessList = function(){
           if(tplIllnessList.length===0){
-            try {
-            let el = document.getElementById('tplIllnessList');
-                el = cloneNode(el);
-                tplIllnessList = el.innerHTML; 
-            } catch(e) {}
+             tplIllnessList = _getThemeTpl('tplIllnessList', tplIllnessList); ; 
           }
           let lData = [].reduce.call(_data.values['illnesses']
                                     ,(theme,illness)=>(theme + _themeIllness(illness))
@@ -142,15 +146,10 @@ let APP = (function(init) {
           const map = {'@{items}': lData};          
           return String.replaceMultiple(tplIllnessList,map);
   };
-
   const _showIllnessList = function(theme){
-    let el = document.getElementById('illnessList');
-    if (el === null){ return; }
-    let t = HtmlToDom(theme);
-    clearNode(el);
-    el.appendChild(t);
+    _renderTheme(theme,'illnessList')
   };
-
+  // let _commands ={}
   const _bindCmds = function (commands) {
     if( !Array.isArray(commands)){return false};
     commands.forEach((command)=>{
@@ -230,11 +229,45 @@ let APP = (function(init) {
       return  0;
     });
     console.log(225,t);  
-    //theneDiagSets()
+    //themeDiagRoom()
+    let tplDiagRoom = '';
+    const _themeDiagRoom = function(diagRoom){
+            if(tplDiagRoom.length===0){
+               tplDiagRoom = _getThemeTpl('tplDiagRoom', tplDiagRoom); 
+            }
 
-    ///themeDiagSet()
-    ////themeDiagRoom()
+            const map = {'@{room}': diagRoom};          
+            return String.replaceMultiple(tplDiagRoom,map);
+    };  
+    //themeDiagSet()
+    let tplDiagSet = '';
+    const _themeDiagSet = function(diagRooms){
+            if(tplDiagSet.length===0){
+               tplDiagSet = _getThemeTpl('tplDiagSet', tplDiagSet); 
+            }
+            let lData = [].reduce.call(diagRooms
+                                      ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
+                                      ,'');
+            const map = {'@{items}': lData};          
+            return String.replaceMultiple(tplDiagSet,map);
+    };
+    //theneDiagSets()
+    let tplDiagSetList = '';
+    const _themeDiagSetList = function(diagSetList){
+            if(tplDiagSetList.length===0){
+              tplDiagSetList = _getThemeTpl('tplDiagSetList', tplDiagSetList); 
+            }
+            
+            let lData = [].reduce.call(diagSetList]
+                                      ,(theme,diagSet)=>(theme + _themeDiagSet(diagSet))
+                                      ,'');
+            const map = {'@{items}': lData};          
+            return String.replaceMultiple(tplDiagSetList,map);
+    };
     //showDiagSets()
+    const _showDiagSetList = function(theme){
+      _renderTheme(theme,'diagSetList')
+    };
   };
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
