@@ -161,14 +161,18 @@ let APP = (function(init) {
     };  
     //themeDiagSet()
     let tplDiagSet = '';
-    const _themeDiagSet = function(diagRooms){
+    const _themeDiagSet = function(diagSet){
             if(tplDiagSet.length===0){
                tplDiagSet = _getThemeTpl('tplDiagSet', tplDiagSet); 
             }
             let lData = [].reduce.call(diagRooms
                                       ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
                                       ,'');
-            const map = {'@{items}': lData};          
+            const map = {'@{items}': lData,
+                         '@{chanse}': diagSet.chance};          
+            console.log(diagSet);
+            console.log(diagSet);
+            console.log(diagSet);
             return String.replaceMultiple(tplDiagSet,map);
     };
     //theneDiagSets()
