@@ -171,9 +171,9 @@ let APP = (function(init) {
                                       ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
                                       ,'');
             const map = {'@{items}': lData,
-                         '@{value}': Math.round(diagSet.value*100,1)
+                         '@{value}': Math.round(diagSet.value*100,1)+'%'
                         };          
-            console.log(diagSet);
+            console.log(diagSet,arrDiagRooms);
             return String.replaceMultiple(tplDiagSet,map);
     };
     //theneDiagSets()
