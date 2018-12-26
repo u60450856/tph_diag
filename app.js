@@ -37,6 +37,10 @@ var clearNode = function(node) {
       node.removeChild(node.firstChild);
   }
 };
+var bitCount = function(u) {
+    const uCount = u - ((u >> 1) & 0o33333333333) -((u >> 2) & 0o11111111111);
+    return ((uCount + (uCount >> 3)) & 0o30707070707) % 63;
+}
 // **********************************************
 let APP = (function(init) {
   'use strict';
@@ -212,6 +216,7 @@ let APP = (function(init) {
       });
     });
     console.log(214,arrDiagChance,t);
+    t=t.filter((item)=>(bitCount(item.id)>=5));
     t=t.filter((item)=>((objDiagRooms.GP & item.id)&&(objDiagRooms.TREAT & item.id)&&(objDiagRooms.WARD & item.id)&&(objDiagRooms.GP2 & item.id)));
     t=t.filter((item)=>(item.value>=0.7));
     t.sort(function (a, b) {
