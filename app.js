@@ -135,9 +135,10 @@ let APP = (function(init) {
                                     return theme + _themeIllness(illness);
                                   },
                                   '');
+          console.log(lData);
           //return lData;
           const map = {'@{items}': lData};          
-          return String.replaceMultiple(tplIllness,map);
+          return String.replaceMultiple(tplIllnessList,map);
   };
 
 
