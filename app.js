@@ -166,14 +166,14 @@ let APP = (function(init) {
                tplDiagSet = _getThemeTpl('tplDiagSet', tplDiagSet); 
             }
             //let lData = [];
-            let arrDiagRooms = _data.values['diagRooms'].filter(diagRoom=>(diagRoom & diagSet.id));
+            let arrDiagRooms = _data.values['diagRooms'].filter(diagRoom=>!(diagRoom & diagSet.id));
             let lData = [].reduce.call(arrDiagRooms
                                       ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
                                       ,'');
             const map = {'@{items}': lData,
                          '@{value}': Math.round(diagSet.value*100,1)+'%'
                         };          
-            console.log(diagSet,arrDiagRooms);
+            console.log(diagSet,typeof diagSet.id,diagSet.id,_data.values['diagRooms'],arrDiagRooms);
             return String.replaceMultiple(tplDiagSet,map);
     };
     //theneDiagSets()
