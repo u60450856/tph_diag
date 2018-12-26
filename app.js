@@ -258,9 +258,10 @@ let APP = (function(init) {
               tplDiagSetList = _getThemeTpl('tplDiagSetList', tplDiagSetList); 
             }
             
-            let lData = [].reduce.call(diagSetList]
+            let lData = [].reduce.call(diagSetList
                                       ,(theme,diagSet)=>(theme + _themeDiagSet(diagSet))
-                                      ,'');
+                                      ,''
+                                      );
             const map = {'@{items}': lData};          
             return String.replaceMultiple(tplDiagSetList,map);
     };
