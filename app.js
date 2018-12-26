@@ -269,12 +269,12 @@ let APP = (function(init) {
       return  0;
     });
     console.log(225,t);  
-   _showDiagSetList(_themeDiagetList(t));
+   _showDiagSetList(_themeDiagSetList(t));
 
 
 
 
-   
+
   };
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
