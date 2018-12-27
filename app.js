@@ -278,6 +278,11 @@ let APP = (function(init) {
       if (bitCount(a.value) < bitCount(b.value)) { return  1; }
       return  0;
     });    
+
+
+
+
+    
     console.log(225,t);  
    _showDiagSetList(_themeDiagSetList(t));
   };
