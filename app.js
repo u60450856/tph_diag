@@ -198,13 +198,14 @@ let APP = (function(init) {
   };  
 ////////////////////////////////////
 const _getSelectedIllnesses = function (){
+  let t = [];
   try {
-    let t = [].map.call(document.querySelectorAll('#illnessList .illness.selected')
-                       ,(item)=>item.getAttribute('data-name') || ''
-                       );
-        t = [].filter.call(_data.values['illnesses']
-                          ,(item)=>t.includes(item.name)
-                          );
+    t = [].map.call(document.querySelectorAll('#illnessList .illness.selected')
+                   ,(item)=>item.getAttribute('data-name') || ''
+                   );
+    t = [].filter.call(_data.values['illnesses']
+                      ,(item)=>t.includes(item.name)
+                      );
   }  catch (e) {}
   return t || [];
 };
