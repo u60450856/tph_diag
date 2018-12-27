@@ -105,7 +105,9 @@ let APP = (function(init) {
     };
   };
 
-  let _theme = {templates:["default":{"id":"default","value":""}]};
+  //let _theme = {templates:["default":{"id":"default","value":""}]};
+  let _theme = {templates:[]};
+      _theme.templates["default"]={"id":"default","value":""};
   // const _getThemeTpl = function(tplId){if not themevalues[tplId]}
   const _getThemeTpl = function(tplId,def){
     if(_theme.templates[tplId].value.length===0){
