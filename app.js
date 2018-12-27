@@ -53,6 +53,8 @@ var bitCount = function(u) {
     const uCount = u - ((u >> 1) & 0o33333333333) -((u >> 2) & 0o11111111111);
     return ((uCount + (uCount >> 3)) & 0o30707070707) % 63;
 }
+const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
+const bitmaskGenerate = function(n){return bitmaskRange(Math.pow(2, n))};
 // **********************************************
 let APP = (function(init) {
   'use strict';
@@ -195,39 +197,36 @@ let APP = (function(init) {
     });
   };  
 ////////////////////////////////////
+const _getSelectedIllnesses = function (){
+  try {
+    let t = [].map.call(document.querySelectorAll('#illnessList .illness.selected')
+                       ,(item)=>item.getAttribute('data-name') || ''
+                       );
+        t = [].filter.call(_data.values['illnesses']
+                          ,(item)=>arrSelectedIllneses.includes(item.name)
+                          );
+  }  catch (e) {}
+  return t || [];
+};
   const _cmdSearch = function (ev) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
-    let arrSelectedIllnesses = [].map.call(document.querySelectorAll('#illnessList .illness.selected')
-                                          ,(item)=>item.getAttribute('data-name') || ''
-                                          );
-        arrSelectedIllnesses = [].filter.call(_data.values['illnesses']
-                                             ,(item)=>arrSelectedIllneses.includes(item.name)
-                                             );
-/*
-    let arrIllnesses = _data.values['illnesses'] || {};
-    let arrSelectedIllnesses = [].map.call(document.querySelectorAll('#illnessList .illness.selected')
-                                          ,(item)=>{
-                                            try {
-                                              let illnessName = item.getAttribute('data-name')
-                                              for(let i=0;i<=arrIllnesses.length;i++){
-                                                let illness = arrIllnesses[i];
-                                                if(illness.name==illnessName) { return illness; }
-                                              }
-                                            }catch(e){}
-                                        });
-*/                                        
+    let arrSelectedIllnesses = _getSelectedIllnesses();
     console.log(arrSelectedIllnesses);  
 
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
     //calculateDiag()
-    const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
-    const bitmaskGenerate = function(n){return bitmaskRange(Math.pow(2, n))};
     let arrDiagSets= bitmaskGenerate(11);
     // конвертируем массив в объект вида  ROOM:BITMASK
+    /*
     let arrDiagRooms = _data.values['diagRooms'];
     let objDiagRooms = {};
     arrDiagRooms.forEach(dr=>{ objDiagRooms[dr.room]=dr.bitmask; });    
+    */
+    let objDiagRooms = {};
+    [].forEach.call(_data.values['diagRooms']
+                   ,(dr)=>{ objDiagRooms[dr.room]=dr.bitmask; }
+                   );    
     console.log('228',objDiagRooms);
     //Считаем шанс диагностики для заболевания конкретным diagSet
     const calcDiagChance = function (illness, diagSet){
@@ -243,8 +242,8 @@ let APP = (function(init) {
     let arrDiagChance = [].map.call(arrSelectedIllnesses, 
                                     (illness)=>{
                                       let t = [];
-                                      arrDiagSets.forEach(ds=>{
-                                        t[ds]=calcDiagChance(illness,ds);
+                                      arrDiagSets.forEach((diagSet)=>{
+                                        t[diagSet]=calcDiagChance(illness,diagSet);
                                       });
                                       illness.diagChance = t;
                                       return illness;
