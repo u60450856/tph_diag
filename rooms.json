@@ -1,13 +1,13 @@
 [
-  {"name":"GP"    ,"room":"GP"    ,"bitmask":1},
-  {"name":"GD"    ,"room":"GD"    ,"bitmask":2},
-  {"name":"CARDIO","room":"CARDIO","bitmask":4},
-  {"name":"WARD"  ,"room":"WARD"  ,"bitmask":8},
-  {"name":"PSY"   ,"room":"PSY"   ,"bitmask":16},
-  {"name":"FLUID" ,"room":"FLUID" ,"bitmask":32},
-  {"name":"XRAY"  ,"room":"XRAY"  ,"bitmask":64},
-  {"name":"MEGA"  ,"room":"MEGA"  ,"bitmask":128},
-  {"name":"DNA"   ,"room":"DNA"   ,"bitmask":256},
-  {"name":"GP2"   ,"room":"GP2"   ,"bitmask":512},
-  {"name":"TREAT" ,"room":"TREAT" ,"bitmask":1024}
+  {"name":"GP"    ,"room":"GP"    ,"time":0,"bitmask":1},
+  {"name":"GD"    ,"room":"GD"    ,"time":26,"bitmask":2},
+  {"name":"CARDIO","room":"CARDIO","time":31,"bitmask":4},
+  {"name":"WARD"  ,"room":"WARD"  ,"time":80,"bitmask":8},
+  {"name":"PSY"   ,"room":"PSY"   ,"time":35,"bitmask":16},
+  {"name":"FLUID" ,"room":"FLUID" ,"time":34,"bitmask":32},
+  {"name":"XRAY"  ,"room":"XRAY"  ,"time":22,"bitmask":64},
+  {"name":"MEGA"  ,"room":"MEGA"  ,"time":33,"bitmask":128},
+  {"name":"DNA"   ,"room":"DNA"   ,"time":28,"bitmask":256},
+  {"name":"GP2"   ,"room":"GP2"   ,"time":0,"bitmask":512},
+  {"name":"TREAT" ,"room":"TREAT" ,"time":0,"bitmask":1024}
 ]

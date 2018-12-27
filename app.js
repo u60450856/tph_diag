@@ -105,14 +105,20 @@ let APP = (function(init) {
     };
   };
 
-  let _theme = {};
+  let _theme = {templates:["default":{"id":"default","value":""}]};
   // const _getThemeTpl = function(tplId){if not themevalues[tplId]}
   const _getThemeTpl = function(tplId,def){
-    try {
-    let el = document.getElementById(tplId);
-        el = cloneNode(el);
-        return el.innerHTML; 
-    } catch(e) {return def || '';}
+    if(_theme.templates[tplId].value.length===0){
+      try {
+        let el = document.getElementById(tplId);
+            el = cloneNode(el);
+            _theme.templates[tplId] = {"id":tplId,"value":el.innerHTML};
+      } catch(e) { }
+    }
+    return _theme.templates[tplId].value
+           || def
+           || _theme.temlates["default"].value
+           || '';
   };
   const _renderTheme = function(theme,targetId){
     try {
@@ -122,78 +128,59 @@ let APP = (function(init) {
       el.appendChild(t);
     } catch(e) {}
   };
-  let tplIllness = '';let illnessId = 0;
+  let illnessId = 0;
   let _themeIllness = function(illness){
-          if(tplIllness.length===0){
-            tplIllness = _getThemeTpl('tplIllness', tplIllness); 
-          }
-
           const map = {'@{name}': illness.name,
                        '@{room}': illness.room,
                        '@{id}'  : illnessId,
                       };
-          return String.replaceMultiple(tplIllness,map);
+          const template = _getThemeTpl('tplIllness'); 
+          return String.replaceMultiple(template,map);
   };
 
-  let tplIllnessList = '';
   const _themeIllnessList = function(){
-          if(tplIllnessList.length===0){
-             tplIllnessList = _getThemeTpl('tplIllnessList', tplIllnessList); ; 
-          }
           let lData = [].reduce.call(_data.values['illnesses']
                                     ,(theme,illness)=>(theme + _themeIllness(illness))
                                     ,'');
           const map = {'@{items}': lData};          
-          return String.replaceMultiple(tplIllnessList,map);
+          const template = _getThemeTpl('tplIllnessList'); 
+          return String.replaceMultiple(template,map);
   };
   const _showIllnessList = function(theme){
     _renderTheme(theme,'illnessList')
   };
-    //themeDiagRoom()
-    let tplDiagRoom = '';
-    const _themeDiagRoom = function(diagRoom){
-            if(tplDiagRoom.length===0){
-               tplDiagRoom = _getThemeTpl('tplDiagRoom', tplDiagRoom); 
-            }
-
-            const map = {'@{id}': diagRoom.room};          
-            return String.replaceMultiple(tplDiagRoom,map);
-    };  
-    //themeDiagSet()
-    let tplDiagSet = '';
-    const _themeDiagSet = function(diagSet){
-            if(tplDiagSet.length===0){
-               tplDiagSet = _getThemeTpl('tplDiagSet', tplDiagSet); 
-            }
-            //let lData = [];
-            let arrDiagRooms = _data.values['diagRooms'].filter(diagRoom=>(diagRoom.bitmask & diagSet.id));
-            let lData = [].reduce.call(arrDiagRooms
-                                      ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
-                                      ,'');
-            const map = {'@{items}': lData,
-                         '@{value}': Math.round(diagSet.value*100,1)+'%'
-                        };          
-            console.log(diagSet,_data.values['diagRooms'],arrDiagRooms);
-            return String.replaceMultiple(tplDiagSet,map);
-    };
-    //theneDiagSets()
-    let tplDiagSetList = '';
-    const _themeDiagSetList = function(diagSetList){
-            if(tplDiagSetList.length===0){
-              tplDiagSetList = _getThemeTpl('tplDiagSetList', tplDiagSetList); 
-            }
-            
-            let lData = [].reduce.call(diagSetList
-                                      ,(theme,diagSet)=>(theme + _themeDiagSet(diagSet))
-                                      ,''
-                                      );
-            const map = {'@{items}': lData};          
-            return String.replaceMultiple(tplDiagSetList,map);
-    };
-    //showDiagSets()
-    const _showDiagSetList = function(theme){
-      _renderTheme(theme,'diagSetList')
-    };  
+  //themeDiagRoom()
+  const _themeDiagRoom = function(diagRoom){
+          const map = {'@{id}': diagRoom.room};          
+          const template = _getThemeTpl('tplDiagRoom'); 
+          return String.replaceMultiple(template,map);
+  };  
+  //themeDiagSet()
+  const _themeDiagSet = function(diagSet){
+          let arrDiagRooms = _data.values['diagRooms'].filter(diagRoom=>(diagRoom.bitmask & diagSet.id));
+          let lData = [].reduce.call(arrDiagRooms
+                                    ,(theme,diagRoom)=>(theme + _themeDiagRoom(diagRoom))
+                                    ,'');
+          const map = {'@{items}': lData,
+                       '@{value}': Math.round(diagSet.value*100,1)+'%'
+                      };          
+          const template = _getThemeTpl('tplDiagSet'); 
+          return String.replaceMultiple(template,map);
+  };
+  //theneDiagSets()
+  const _themeDiagSetList = function(diagSetList){
+          let lData = [].reduce.call(diagSetList
+                                    ,(theme,diagSet)=>(theme + _themeDiagSet(diagSet))
+                                    ,''
+                                    );
+          const map = {'@{items}': lData};          
+          const template = _getThemeTpl('tplDiagSetList'); 
+          return String.replaceMultiple(template,map);
+  };
+  //showDiagSets()
+  const _showDiagSetList = function(theme){
+    _renderTheme(theme,'diagSetList')
+  };  
   // let _commands ={}
   const _bindCmds = function (commands) {
     if( !Array.isArray(commands)){return false};
@@ -275,11 +262,6 @@ let APP = (function(init) {
     });
     console.log(225,t);  
    _showDiagSetList(_themeDiagSetList(t));
-
-
-
-
-
   };
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
