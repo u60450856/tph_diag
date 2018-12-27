@@ -203,7 +203,7 @@ const _getSelectedIllnesses = function (){
                        ,(item)=>item.getAttribute('data-name') || ''
                        );
         t = [].filter.call(_data.values['illnesses']
-                          ,(item)=>arrSelectedIllneses.includes(item.name)
+                          ,(item)=>t.includes(item.name)
                           );
   }  catch (e) {}
   return t || [];
