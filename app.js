@@ -265,7 +265,7 @@ let APP = (function(init) {
 
 
 
-    
+
     t=t.filter((item)=>(item.value>=0.7));
     //sortDiagsSets()
     t.sort(function (a, b) {
@@ -273,6 +273,11 @@ let APP = (function(init) {
       if (a.value < b.value) { return  1; }
       return  0;
     });
+    t.sort(function (a, b) {
+      if (bitCount(a.value) > bitCount(b.value)) { return -1; }
+      if (bitCount(a.value) < bitCount(b.value)) { return  1; }
+      return  0;
+    });    
     console.log(225,t);  
    _showDiagSetList(_themeDiagSetList(t));
   };
