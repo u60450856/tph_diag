@@ -122,6 +122,12 @@ let APP = (function(init) {
            || _theme.temlates["default"].value
            || '';
   };
+
+
+
+
+
+  
   const _renderTheme = function(theme,targetId){
     try {
       let el = document.getElementById(targetId);
