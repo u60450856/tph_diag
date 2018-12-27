@@ -122,12 +122,6 @@ let APP = (function(init) {
            || _theme.temlates["default"].value
            || '';
   };
-
-
-
-
-
-  
   const _renderTheme = function(theme,targetId){
     try {
       let el = document.getElementById(targetId);
@@ -204,6 +198,13 @@ let APP = (function(init) {
   const _cmdSearch = function (ev) {
     //getSelectedIllnesses()
     //Генерируем массив выбраных заболваний
+    let arrSelectedIllnesses = [].map.call(document.querySelectorAll('#illnessList .illness.selected')
+                                          ,(item)=>item.getAttribute('data-name') || ''
+                                          );
+        arrSelectedIllnesses = [].filter.call(_data.values['illnesses']
+                                             ,(item)=>arrSelectedIllneses.includes(item.name)
+                                             );
+/*
     let arrIllnesses = _data.values['illnesses'] || {};
     let arrSelectedIllnesses = [].map.call(document.querySelectorAll('#illnessList .illness.selected')
                                           ,(item)=>{
@@ -215,6 +216,7 @@ let APP = (function(init) {
                                               }
                                             }catch(e){}
                                         });
+*/                                        
     console.log(arrSelectedIllnesses);  
 
     //Считаем шансы диагностики для каждого выбранного заболенвания с каждым diagSet 
