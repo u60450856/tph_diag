@@ -258,7 +258,7 @@ let APP = (function(init) {
     t=t.filter((item)=>((objDiagRooms.GP & item.id)
                         && !(objDiagRooms.TREAT & item.id)
                         &&(objDiagRooms.WARD & item.id)
-//                        &&(objDiagRooms.GP2 & item.id)
+                        && !(objDiagRooms.GP2 & item.id)
                        )
               );
 
@@ -282,7 +282,7 @@ let APP = (function(init) {
 
 
 
-    
+
     console.log(225,t);  
    _showDiagSetList(_themeDiagSetList(t));
   };
