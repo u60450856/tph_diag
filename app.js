@@ -110,7 +110,7 @@ let APP = (function(init) {
       _theme.templates["default"]={"id":"default","value":""};
   // const _getThemeTpl = function(tplId){if not themevalues[tplId]}
   const _getThemeTpl = function(tplId,def){
-    if(typeof _theme.templates[tplId] =='undeined' || _theme.templates[tplId].value.length===0){
+    if(typeof _theme.templates[tplId] =='undefined' || _theme.templates[tplId].value.length===0){
       try {
         let el = document.getElementById(tplId);
             el = cloneNode(el);
