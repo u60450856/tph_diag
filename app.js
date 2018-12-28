@@ -278,35 +278,22 @@ let APP = (function(init) {
     //t=t.filter((item)=>(bitCount(item.id)<=7));
     t=t.filter((item)=>((objDiagRooms.GP & item.id)
                         && !(objDiagRooms.TREAT & item.id)
-                        &&(objDiagRooms.WARD & item.id)
-                        && !(objDiagRooms.GP2 & item.id)
+                        //&&(objDiagRooms.WARD & item.id)
+                        //&& (objDiagRooms.GP2 & item.id)
                        )
               );
     t=t.filter((item)=>(item.value>=0.7));
     //sortDiagsSets()
     t.sort(function (a, b) {
       switch(true){
-      case (bitCount(a.value) < bitCount(b.value)): { return -1; }
-      case (bitCount(a.value) > bitCount(b.value)): { return  1; }
+      case (bitCount(a.value) > bitCount(b.value)): { return -1; }
+      case (bitCount(a.value) < bitCount(b.value)): { return  1; }
       default:
         if (a.value > b.value) { return -1; }
         if (a.value < b.value) { return  1; }
         return  0;
       }
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*
     t.sort(function (a, b) {
       if (a.value > b.value) { return -1; }
