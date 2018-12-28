@@ -305,9 +305,9 @@ let APP = (function(init) {
        }
   };
   const _cmdLevelSelect = function (ev) {
-       //if(!ev.target.classList.contains('level')){ return; }
+     if(!ev.target.classList.contains('level')){ return; }
+     ev.stopPropagation();
 
-       //ev.stopPropagation();
      try {
        const levelName = ev.target.getAttribute("data-name");
        const levels = _data.values["levels"];
