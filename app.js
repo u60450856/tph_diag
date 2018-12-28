@@ -142,7 +142,7 @@ let APP = (function(init) {
   };
   const _themeLevelList = function(){
           let lData = [].reduce.call(_data.values['levels']
-                                    ,(theme,levelName)=>(theme + _themeLevel(level))
+                                    ,(theme,level)=>(theme + _themeLevel(level))
                                     ,'');
           const map = {'@{items}': lData};          
           const template = _getThemeTpl('tplLevelList'); 
@@ -155,7 +155,7 @@ let APP = (function(init) {
 
 
 
-  
+
   let illnessId = 0;
   let _themeIllness = function(illness){
           const map = {'@{name}': illness.name,
