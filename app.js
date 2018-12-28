@@ -316,6 +316,7 @@ console.log(levelName);
 console.log(levels);
        const level = {};
        [].forEach.call(levels,(lvl)=>{
+console.log(lvl,levelName);
          if(lvl.name==levelName){
            return lvl;
          }
