@@ -314,15 +314,17 @@ let APP = (function(init) {
        const level = levels.reduce((lvl)=>{lvl.name==levelName});
        const t = document.querySelectedAll('#illnessList .illness');
        [].forEach.call(t,(item)=>{
-            ev.target.classList.del('selected'); 
-
+            ev.target.classList.remove('selected'); 
+console.log(ev.target);
             [].forEach.call(level,(illnessName)=>{
                  if(illnessName == item.getAttribute("data-name")){
                    ev.target.classList.add('selected'); 
                  }
             });
           });
-     } catch(e) {}
+     } catch(e) {
+       consol.log{e};
+     }
   };
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
@@ -344,7 +346,7 @@ let APP = (function(init) {
 
 
 
-                
+
             });
   };
   let APP = {
