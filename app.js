@@ -309,7 +309,7 @@ console.log(ev.target);
        //if(!ev.target.classList.contains('level')){ return; }
 
        //ev.stopPropagation();
-       try {
+     try {
        const levelName = ev.target.classList.getAttribute("data-name");
        const levels = _data.values["levels"];
        const level = levels.reduce((lvl)=>{lvl.name==levelName});
@@ -326,11 +326,6 @@ console.log(ev.target);
        console.log(e);
      }
   };
-
-
-
-
-  
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
