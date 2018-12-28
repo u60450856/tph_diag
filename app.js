@@ -152,10 +152,6 @@ let APP = (function(init) {
     _renderTheme(theme,'levelList')
   };
 
-
-
-
-
   let illnessId = 0;
   let _themeIllness = function(illness){
           const map = {'@{name}': illness.name,
