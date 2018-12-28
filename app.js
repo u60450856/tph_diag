@@ -316,13 +316,12 @@ console.log(levelName);
 console.log(levels);
        const level = {};
        [].forEach.call(levels,(lvl)=>{
-console.log(lvl,levelName);
          if(lvl.name==levelName){
            level = lvl;
          }
        });
 console.log(level);
-       const t = document.querySelectedAll('#illnessList .illness');
+       const t = document.querySelectorAll('#illnessList .illness');
 console.log(t);       
        [].forEach.call(t,(item)=>{item.classList.remove('selected')});
        [].forEach.call(t,(item)=>{
@@ -343,7 +342,7 @@ console.log(illnessName);
 
 
 
-  
+
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
