@@ -317,7 +317,7 @@ console.log(ev.target);
            return lvl;
          }
        });
-console.log(level) ;
+console.log(level);
        const t = document.querySelectedAll('#illnessList .illness');
 console.log(t);       
        [].forEach.call(t,(item)=>{item.classList.remove('selected')});
@@ -334,6 +334,11 @@ console.log(illnessName);
 //       console.log(e);
      }
   };
+
+
+
+
+
 
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
