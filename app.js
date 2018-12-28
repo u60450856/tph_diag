@@ -311,7 +311,9 @@ console.log(ev.target);
        //ev.stopPropagation();
      try {
        const levelName = ev.target.getAttribute("data-name");
+console.log(levelName);
        const levels = _data.values["levels"];
+console.log(levels);
        const level = [].reduce.call(levels,(lvl)=>{
          if(lvl.name==levelName){
            return lvl;
