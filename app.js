@@ -310,7 +310,7 @@ console.log(ev.target);
 
        //ev.stopPropagation();
      try {
-       const levelName = ev.target.classList.getAttribute("data-name");
+       const levelName = ev.target.getAttribute("data-name");
        const levels = _data.values["levels"];
        const level = levels.reduce((lvl)=>{lvl.name==levelName});
        const t = document.querySelectedAll('#illnessList .illness');
