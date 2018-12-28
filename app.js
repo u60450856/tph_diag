@@ -141,6 +141,10 @@ let APP = (function(init) {
           return String.replaceMultiple(template,map);
   };
 
+
+
+
+
   const _themeLevelList = function(){
           let lData = [].reduce.call(_data.values['levels']
                                     ,(theme,levelName)=>(theme + _themeLevel(level))
