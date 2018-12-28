@@ -314,7 +314,7 @@ console.log(ev.target);
 console.log(levelName);
        const levels = _data.values["levels"];
 console.log(levels);
-       const level = {};
+       let level = {};
        [].forEach.call(levels,(lvl)=>{
          if(lvl.name==levelName){
            level = lvl;
@@ -334,7 +334,7 @@ console.log(illnessName);
             });
           });
      } catch(e) {
-//       console.log(e);
+       console.log(e);
      }
   };
   const _onload = function(event) {
