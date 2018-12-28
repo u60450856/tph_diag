@@ -37,7 +37,7 @@ var clearNode = function(node) {
       node.removeChild(node.firstChild);
   }
 };
-var cloneNode = function(el) {
+const cloneNode = function(el) {
   'use strict';
   if(el !== null){ 
     let p = document.createElement('div');
@@ -49,12 +49,14 @@ var cloneNode = function(el) {
         return  p; 
   }
 };
-var bitCount = function(u) {
+const bitCount = function(u) {
     const uCount = u - ((u >> 1) & 0o33333333333) -((u >> 2) & 0o11111111111);
     return ((uCount + (uCount >> 3)) & 0o30707070707) % 63;
 }
-const bitmaskRange = function(til){ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
-const bitmaskGenerate = function(n){return bitmaskRange(Math.pow(2, n))};
+const bitmaskGenerate = function(n){
+  const bitmaskRange = (til)=>{ let x = 0, xs = []; while (x < til){ xs.push(x++); }; return xs; };
+  return bitmaskRange(Math.pow(2, n))
+};
 // **********************************************
 let APP = (function(init) {
   'use strict';
@@ -132,6 +134,24 @@ let APP = (function(init) {
       el.appendChild(t);
     } catch(e) {}
   };
+  let _themeLevel = function(illness){
+          const map = {'@{name}': level.name,
+                      };
+          const template = _getThemeTpl('tplLevel'); 
+          return String.replaceMultiple(template,map);
+  };
+
+  const _themeLevelList = function(){
+          let lData = [].reduce.call(_data.values['levels']
+                                    ,(theme,levelName)=>(theme + _themeLevel(level))
+                                    ,'');
+          const map = {'@{items}': lData};          
+          const template = _getThemeTpl('tplLevelList'); 
+          return String.replaceMultiple(template,map);
+  };
+  const _showLevelList = function(theme){
+    _renderTheme(theme,'levelList')
+  };
   let illnessId = 0;
   let _themeIllness = function(illness){
           const map = {'@{name}': illness.name,
@@ -185,6 +205,7 @@ let APP = (function(init) {
   const _showDiagSetList = function(theme){
     _renderTheme(theme,'diagSetList')
   };  
+
   // let _commands ={}
   const _bindCmds = function (commands) {
     if( !Array.isArray(commands)){return false};
@@ -269,15 +290,10 @@ let APP = (function(init) {
       return  0;
     });
     t.sort(function (a, b) {
-      if (bitCount(a.value) > bitCount(b.value)) { return -1; }
-      if (bitCount(a.value) < bitCount(b.value)) { return  1; }
+      if (bitCount(a.value) < bitCount(b.value)) { return -1; }
+      if (bitCount(a.value) > bitCount(b.value)) { return  1; }
       return  0;
     });    
-
-
-
-
-
     console.log(225,t);  
    _showDiagSetList(_themeDiagSetList(t));
   };
@@ -288,22 +304,42 @@ let APP = (function(init) {
          ev.target.classList.toggle('selected'); 
        }
   };
+  const _cmdLevelSelect = function (ev) {
+       if(!ev.target.classList.contains('level')){ return; }
 
+       ev.stopPropagation();
+       try {
+       const levelName = ev.target.classList.getAttribute("data-name");
+       const levels = _data.values["levels"];
+       const level = levels.reduce((lvl)=>{lvl.name==levelName});
+       const t = document.querySelectedAll('#illnessList .illness');
+       [].forEach.call(t,(item)=>{
+            ev.target.classList.del('selected'); 
+
+            [].forEach.call(level,(illnessName)=.{                                   
+                 if(illnessName == item.getAttribute("data-name");){
+                   ev.target.classList.add('selected'); 
+                 }
+            });
+          });
+     } catck(e) {}
+  };
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
+              {id:'levels'   ,url:'levels.json'},
               {id:'illnesses',url:'illnesses.json'},
               {id:'diagRooms',url:'rooms.json'}
-            ],
-            function(){
-               let t = _themeIllnessList();
-               _showIllnessList(t);
-              //_showSearchBtn();
-              _bindCmds([
-                          ['clear'          ,'btnClear'   ,'click',false,_cmdClear],
+             ]
+             ,function(){
+                _showLevelList(_themeLevelList());
+                _showIllnessList(_themeIllnessList());
+                _bindCmds([
+//                          ['clear'          ,'btnClear'   ,'click',false,_cmdClear],
                           ['search'         ,'btnSearch'   ,'click',false,_cmdSearch],
-                          ['illnessSelected','illnessList','click',false,_cmdIllnessSelect],
-                       ]);
+                          ['illnessSelected','illnessList' ,'click',false,_cmdIllnessSelect],
+                          ['levelSelected'  ,'levelList'   ,'click',false,_cmdLevelsSelect],
+                         ]);
             });
   };
   let APP = {

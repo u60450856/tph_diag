@@ -14,6 +14,7 @@
     <div id="main">
       <div id="setup">
         <div class="title">Select Illnesses</div>
+        <div id="levelList"></div>
         <div id="illnessList"></div>
       </div>
       <div id="result">
@@ -26,10 +27,12 @@
     </div>
     <div class="hidden">
       <div id="tplIllnessList" class="inner">@{items}</div>
-      <div id="tplIllness" class="illness icon room @{room}" data-id="@{id}" data-name="@{name}">@{name}</div>       
+        <div id="tplIllness" class="illness icon room @{room}" data-id="@{id}" data-name="@{name}">@{name}</div>       
       <div id="tplDiagSetList" class="inner">@{items}</div>
         <div id="tplDiagSet" class="diagSet rooms">@{items}<span class="diagChance">@{value}</span></div>
           <span id="tplDiagRoom" class="diagRoom icon room @{id}"> </span>
+      <div id="tplLevelList" class="inner">@{items}</div>
+        <div id="tplLevel" class="level" data-name="@{name}">@{name}</div>       
     </div>      
   <script src="app.js"></script>
 </body>
