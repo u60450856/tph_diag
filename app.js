@@ -314,7 +314,8 @@ console.log(ev.target);
 console.log(levelName);
        const levels = _data.values["levels"];
 console.log(levels);
-       const level = [].reduce.call(levels,(lvl)=>{
+       const level = {};
+       [].forEach.call(levels,(lvl)=>{
          if(lvl.name==levelName){
            return lvl;
          }
