@@ -312,9 +312,7 @@ console.log(ev.target);
      try {
        const levelName = ev.target.getAttribute("data-name");
        const levels = _data.values["levels"];
-console.log(levels) ;
        const level = [].reduce.call(levels,(lvl)=>{
-console.log(lvl) ;
          if(lvl.name==levelName){
            return lvl;
          }
@@ -322,10 +320,10 @@ console.log(lvl) ;
 console.log(level) ;
        const t = document.querySelectedAll('#illnessList .illness');
        [].forEach.call(t,(item)=>{
-            ev.target.classList.remove('selected'); 
-            [].forEach.call(level,(illnessName)=>{
+            t.classList.remove('selected'); 
+            [].forEach.call(level.illnesses,(illnessName)=>{
                  if(illnessName == item.getAttribute("data-name")){
-                   ev.target.classList.add('selected'); 
+                   t.add('selected'); 
                  }
             });
           });
@@ -338,7 +336,7 @@ console.log(level) ;
 
 
 
-  
+
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
