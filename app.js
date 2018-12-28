@@ -338,7 +338,7 @@ let APP = (function(init) {
 //                          ['clear'          ,'btnClear'   ,'click',false,_cmdClear],
                           ['search'         ,'btnSearch'   ,'click',false,_cmdSearch],
                           ['illnessSelected','illnessList' ,'click',false,_cmdIllnessSelect],
-                          ['levelSelected'  ,'levelList'   ,'click',false,_cmdLevelsSelect],
+                          ['levelSelected'  ,'levelList'   ,'click',false,_cmdLevelSelect],
                          ]);
             });
   };
