@@ -319,11 +319,14 @@ console.log(ev.target);
        });
 console.log(level) ;
        const t = document.querySelectedAll('#illnessList .illness');
+console.log(t);       
+       [].forEach.call(t,(item)=>{item.classList.remove('selected')});
        [].forEach.call(t,(item)=>{
-            t.classList.remove('selected'); 
+console.log(item);
             [].forEach.call(level.illnesses,(illnessName)=>{
+console.log(illnessName);
                  if(illnessName == item.getAttribute("data-name")){
-                   t.add('selected'); 
+                   item.add('selected'); 
                  }
             });
           });
