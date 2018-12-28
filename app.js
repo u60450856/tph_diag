@@ -321,7 +321,7 @@ let APP = (function(init) {
             ev.target.classList.del('selected'); 
 
             [].forEach.call(level,(illnessName)=>{
-                 if(illnessName == item.getAttribute("data-name");){
+                 if(illnessName == item.getAttribute("data-name")){
                    ev.target.classList.add('selected'); 
                  }
             });
