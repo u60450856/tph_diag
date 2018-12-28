@@ -326,7 +326,7 @@ let APP = (function(init) {
                  }
             });
           });
-     } catck(e) {}
+     } catch(e) {}
   };
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
