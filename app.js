@@ -318,7 +318,7 @@ console.log(levels);
        [].forEach.call(levels,(lvl)=>{
 console.log(lvl,levelName);
          if(lvl.name==levelName){
-           return lvl;
+           level = lvl;
          }
        });
 console.log(level);
