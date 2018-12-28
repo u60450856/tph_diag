@@ -306,14 +306,13 @@ let APP = (function(init) {
   };
   const _cmdLevelSelect = function (ev) {
 console.log(ev.target);
-       //if(!ev.target.classList.contains('level')){ return; }
+       if(!ev.target.classList.contains('level')){ return; }
 
        //ev.stopPropagation();
      try {
        const levelName = ev.target.getAttribute("data-name");
        const levels = _data.values["levels"];
        const level = [].reduce.call(levels,(lvl)=>{
-console.log(lvl) ;
          if(lvl.name==levelName){
            return lvl;
          }
