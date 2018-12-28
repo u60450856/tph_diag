@@ -320,7 +320,7 @@ let APP = (function(init) {
        [].forEach.call(t,(item)=>{
             ev.target.classList.del('selected'); 
 
-            [].forEach.call(level,(illnessName)=.{                                   
+            [].forEach.call(level,(illnessName)=>{
                  if(illnessName == item.getAttribute("data-name");){
                    ev.target.classList.add('selected'); 
                  }
