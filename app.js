@@ -282,7 +282,7 @@ let APP = (function(init) {
                         //&& (objDiagRooms.GP2 & item.id)
                        )
               );
-    t=t.filter((item)=>(item.value>=0.7));
+    //t=t.filter((item)=>(item.value>=0.7));
     //sortDiagsSets()
     t.sort(function (a, b) {
       switch(true){
@@ -313,7 +313,7 @@ let APP = (function(init) {
 
 
 
-  
+
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
        if(ev.target.classList.contains('illness')){ 
