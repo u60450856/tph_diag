@@ -312,7 +312,13 @@ console.log(ev.target);
      try {
        const levelName = ev.target.getAttribute("data-name");
        const levels = _data.values["levels"];
-       const level = levels.reduce((lvl)=>{lvl.name==levelName});
+console.log(levels) ;
+       const level = [].reduce.call(levels,(lvl)=>{
+         if(lvl.name==levelName){
+           return lvl;
+         }
+       });
+console.log(level) ;
        const t = document.querySelectedAll('#illnessList .illness');
        [].forEach.call(t,(item)=>{
             ev.target.classList.remove('selected'); 
@@ -331,7 +337,7 @@ console.log(ev.target);
 
 
 
-  
+
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
