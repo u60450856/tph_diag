@@ -305,9 +305,10 @@ let APP = (function(init) {
        }
   };
   const _cmdLevelSelect = function (ev) {
-       if(!ev.target.classList.contains('level')){ return; }
+console.log(ev.target);
+       //if(!ev.target.classList.contains('level')){ return; }
 
-       ev.stopPropagation();
+       //ev.stopPropagation();
        try {
        const levelName = ev.target.classList.getAttribute("data-name");
        const levels = _data.values["levels"];
@@ -315,7 +316,6 @@ let APP = (function(init) {
        const t = document.querySelectedAll('#illnessList .illness');
        [].forEach.call(t,(item)=>{
             ev.target.classList.remove('selected'); 
-console.log(ev.target);
             [].forEach.call(level,(illnessName)=>{
                  if(illnessName == item.getAttribute("data-name")){
                    ev.target.classList.add('selected'); 
