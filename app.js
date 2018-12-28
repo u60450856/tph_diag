@@ -330,11 +330,6 @@ let APP = (function(init) {
        console.log(e);
      }
   };
-
-
-
-
-
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
