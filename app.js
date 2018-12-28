@@ -312,7 +312,6 @@ console.log(ev.target);
      try {
        const levelName = ev.target.getAttribute("data-name");
        const levels = _data.values["levels"];
-console.log(levels) ;
        const level = [].reduce.call(levels,(lvl)=>{
 console.log(lvl) ;
          if(lvl.name==levelName){
@@ -333,6 +332,11 @@ console.log(level) ;
        console.log(e);
      }
   };
+
+
+
+
+
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
