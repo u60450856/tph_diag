@@ -134,7 +134,7 @@ let APP = (function(init) {
       el.appendChild(t);
     } catch(e) {}
   };
-  let _themeLevel = function(illness){
+  let _themeLevel = function(level){
           const map = {'@{name}': level.name,
                       };
           const template = _getThemeTpl('tplLevel'); 
