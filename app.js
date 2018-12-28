@@ -323,7 +323,7 @@ console.log(ev.target);
             });
           });
      } catch(e) {
-       consol.log{e};
+       consol.log(e);
      }
   };
   const _onload = function(event) {
