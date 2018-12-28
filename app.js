@@ -340,6 +340,11 @@ let APP = (function(init) {
                           ['illnessSelected','illnessList' ,'click',false,_cmdIllnessSelect],
                           ['levelSelected'  ,'levelList'   ,'click',false,_cmdLevelSelect],
                          ]);
+
+
+
+
+                
             });
   };
   let APP = {
