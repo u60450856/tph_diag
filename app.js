@@ -305,31 +305,24 @@ let APP = (function(init) {
        }
   };
   const _cmdLevelSelect = function (ev) {
-console.log(ev.target);
        //if(!ev.target.classList.contains('level')){ return; }
 
        //ev.stopPropagation();
      try {
        const levelName = ev.target.getAttribute("data-name");
-console.log(levelName);
        const levels = _data.values["levels"];
-console.log(levels);
        let level = {};
        [].forEach.call(levels,(lvl)=>{
          if(lvl.name==levelName){
            level = lvl;
          }
        });
-console.log(level);
        const t = document.querySelectorAll('#illnessList .illness');
-console.log(t);       
        [].forEach.call(t,(item)=>{item.classList.remove('selected')});
        [].forEach.call(t,(item)=>{
-console.log(item);
             [].forEach.call(level.illnesses,(illnessName)=>{
-console.log(illnessName);
                  if(illnessName == item.getAttribute("data-name")){
-                   item.add('selected'); 
+                   item.classList.add('selected'); 
                  }
             });
           });
@@ -341,7 +334,7 @@ console.log(illnessName);
 
 
 
-  
+
   const _onload = function(event) {
     document.removeEventListener('DOMContentLoaded', _onload);
     _getData([
