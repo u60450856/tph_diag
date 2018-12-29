@@ -279,7 +279,8 @@ let APP = (function(init) {
     t=t.filter((item)=>((objDiagRooms.GP & item.id)
                         && !(objDiagRooms.TREAT & item.id)
                         //&&(objDiagRooms.WARD & item.id)
-                        //&& (objDiagRooms.GP2 & item.id)
+                        && !(objDiagRooms.DNA & item.id)
+                        && !(objDiagRooms.GP2 & item.id)
                        )
               );
     //t=t.filter((item)=>(item.value>=0.7));
