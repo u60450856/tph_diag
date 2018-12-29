@@ -284,13 +284,13 @@ let APP = (function(init) {
                         && !(objDiagRooms.GP2 & item.id)
                        )
               );
-    t=t.filter((item)=>(item.value>=0.5));
+    //t=t.filter((item)=>(item.value>=0.5));
 
 
 
 
 
-    
+
     //sortDiagsSets()
     t.sort(function (a, b) {
       switch(true){
