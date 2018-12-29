@@ -285,12 +285,6 @@ let APP = (function(init) {
                        )
               );
     t=t.filter((item)=>(item.value>=0.51));
-
-
-
-
-
-
     //sortDiagsSets()
     t.sort(function (a, b) {
       switch(true){
