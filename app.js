@@ -285,6 +285,12 @@ let APP = (function(init) {
                        )
               );
     t=t.filter((item)=>(item.value>=0.5));
+
+
+
+
+
+    
     //sortDiagsSets()
     t.sort(function (a, b) {
       switch(true){
