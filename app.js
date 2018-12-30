@@ -311,7 +311,7 @@ let APP = (function(init) {
       if(typeof t1[bitCount(item.value)] == 'undefined'){
         t1[bitCount(item.value)] = [];
       }
-      t1[bitCount(item.value)].push(item));
+      t1[bitCount(item.value)].push(item);
     };
     console.log(225,t, t1); 
     t1.forEach((bits)=>{
