@@ -301,6 +301,11 @@ let APP = (function(init) {
       }
     });
     */
+
+
+
+
+    
     let t1 = [];
     t.forEach((item)=>t1.push(bitCount(item.value)));
     console.log(225,t, t1); 
