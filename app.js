@@ -249,7 +249,11 @@ let APP = (function(init) {
       return Object.keys(objDiagRooms)
                    .reduce((chance, dr) => {
                       if(diagSet & objDiagRooms[dr]){
-                         chance += illness.diag[dr];
+                          chance += illness.diag[dr];
+                          if(!objDiagRooms.GP || !objDiagRooms.GP2 || !objDiagRooms.TREAT){
+                            chance += illness.diag["GP2"];
+                          }
+                        }
                       }
                       return chance;
                     },0);
@@ -296,18 +300,6 @@ let APP = (function(init) {
         return  0;
       }
     });
-
-
-
-
-
-
-
-
-
-
-
-    
     /*
     t.sort(function (a, b) {
       if (a.value > b.value) { return -1; }
