@@ -329,11 +329,6 @@ let APP = (function(init) {
     console.log(225,t, t1, t2); 
    _showDiagSetList(_themeDiagSetList(t2));
   };
-
-
-
-
-
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
        if(ev.target.classList.contains('illness')){ 
