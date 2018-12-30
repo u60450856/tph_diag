@@ -301,11 +301,6 @@ let APP = (function(init) {
       }
     });
     */
-
-
-
-
-
     let t1 = [];
     t.forEach((item)=>{
       if(typeof t1[bitCount(item.value)] == 'undefined'){
