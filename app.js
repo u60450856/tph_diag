@@ -289,6 +289,7 @@ let APP = (function(init) {
               );
     t=t.filter((item)=>(item.value>=0.4));
     //sortDiagsSets()
+    /**
     t.sort(function (a, b) {
       switch(true){
       case (bitCount(a.value) > bitCount(b.value)): { return -1; }
@@ -299,19 +300,25 @@ let APP = (function(init) {
         return  0;
       }
     });
-    /*
-    t.sort(function (a, b) {
-      if (a.value > b.value) { return -1; }
-      if (a.value < b.value) { return  1; }
-      return  0;
-    });
-    t.sort(function (a, b) {
-      if (bitCount(a.value) < bitCount(b.value)) { return -1; }
-      if (bitCount(a.value) > bitCount(b.value)) { return  1; }
-      return  0;
-    });
     */
-    console.log(225,t);  
+    let t1 = [];
+    t.forEach((item)=>t1.push(bitCount(item.value)));
+    t1.forEach((bits)=>{
+      bits.sort((a, b)=>{
+        switch(true){
+        case (bitCount(a.value) > bitCount(b.value)): return -1;
+        case (bitCount(a.value) < bitCount(b.value)): return  1; 
+        default: return  0;
+        }
+      });
+    });
+    let t2 = [];
+    t1.map((bits)=>{
+      for (let i=0;i<=bits.length;i++){
+        t2.push(bits[i]);
+      }
+    });
+    console.log(225,t, t1, t2); 
    _showDiagSetList(_themeDiagSetList(t));
   };
 
