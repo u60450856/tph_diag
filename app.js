@@ -303,23 +303,24 @@ let APP = (function(init) {
     */
     let t1 = {};
     t.forEach((item)=>{
-      if(typeof t1[bitCount(item.id)] == 'undefined'){
-        t1[bitCount(item.id)] = [];
+      let bc = bitCount(item.id).
+      if(typeof t1[bc] == 'undefined'){
+        t1[bc] = [];
       }
-      t1[bitCount(item.id)].push(item);
+      t1[bc].push(item);
     });
     console.log(225,t, t1); 
     Object.keys(t1)
           .forEach((bits)=>{
-              t1[bits].sort((a, b)=>{
-                switch(true){
-                case (bitCount(a.value) > bitCount(b.value)): return -1;
-                case (bitCount(a.value) < bitCount(b.value)): return  1; 
-                default: return  0;
+                t1[bits].sort((a, b)=>{
+                  if (bitCount(a.value) < bitCount(b.value)){ return -1; }
+                  if (bitCount(a.value) > bitCount(b.value)){ return  1; }
+                  return  0;
                 }
               });
           });
     let t2 = [];
+    console.log(323,t1); 
     t1.map((bits)=>{
       for (let i=0;i<=bits.length;i++){
         t2.push(bits[i]);
