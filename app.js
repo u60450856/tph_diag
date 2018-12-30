@@ -307,7 +307,7 @@ let APP = (function(init) {
         t1[bitCount(item.value)] = [];
       }
       t1[bitCount(item.value)].push(item);
-    };
+    });
     console.log(225,t, t1); 
     t1.forEach((bits)=>{
       bits.sort((a, b)=>{
