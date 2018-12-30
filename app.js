@@ -301,7 +301,7 @@ let APP = (function(init) {
       }
     });
     */
-    let t1 = [];
+    let t1 = {};
     t.forEach((item)=>{
       if(typeof t1[bitCount(item.id)] == 'undefined'){
         t1[bitCount(item.id)] = [];
@@ -309,15 +309,16 @@ let APP = (function(init) {
       t1[bitCount(item.id)].push(item);
     });
     console.log(225,t, t1); 
-    t1.forEach((bits)=>{
-      bits.sort((a, b)=>{
-        switch(true){
-        case (bitCount(a.value) > bitCount(b.value)): return -1;
-        case (bitCount(a.value) < bitCount(b.value)): return  1; 
-        default: return  0;
-        }
-      });
-    });
+    Object.keys(t1)
+          .forEach((bits)=>{
+              t1[bits].sort((a, b)=>{
+                switch(true){
+                case (bitCount(a.value) > bitCount(b.value)): return -1;
+                case (bitCount(a.value) < bitCount(b.value)): return  1; 
+                default: return  0;
+                }
+              });
+          });
     let t2 = [];
     t1.map((bits)=>{
       for (let i=0;i<=bits.length;i++){
