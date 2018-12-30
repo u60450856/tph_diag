@@ -303,7 +303,7 @@ let APP = (function(init) {
     */
     let t1 = {};
     t.forEach((item)=>{
-      let bc = bitCount(item.id).
+      let bc = bitCount(item.id);
       if(typeof t1[bc] == 'undefined'){
         t1[bc] = [];
       }
