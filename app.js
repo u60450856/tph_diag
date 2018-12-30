@@ -254,7 +254,6 @@ let APP = (function(init) {
                             chance += illness.diag["GP2"];
                           }
                         }
-                      }
                       return chance;
                     },0);
     };
