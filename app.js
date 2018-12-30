@@ -323,7 +323,9 @@ let APP = (function(init) {
     Object.keys(t1) 
           .map((bits)=>{
             for (let i=0;i<=t1[bits].length;i++){
-              t2.push(t1[bits][i]);
+              if(typeof t1[bits][i] !== 'undefined'){
+                t2.push(t1[bits][i]);
+              }
           }
     });
     console.log(225,t, t1, t2); 
