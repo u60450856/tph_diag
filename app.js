@@ -316,8 +316,7 @@ let APP = (function(init) {
                   if (bitCount(a.value) < bitCount(b.value)){ return -1; }
                   if (bitCount(a.value) > bitCount(b.value)){ return  1; }
                   return  0;
-                }
-              });
+                });
           });
     let t2 = [];
     console.log(323,t1); 
@@ -329,6 +328,7 @@ let APP = (function(init) {
     console.log(225,t, t1, t2); 
    _showDiagSetList(_themeDiagSetList(t2));
   };
+
   const _cmdClear = function (ev) { };
   const _cmdIllnessSelect = function (ev) {
        if(ev.target.classList.contains('illness')){ 
