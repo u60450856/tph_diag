@@ -292,21 +292,21 @@ let APP = (function(init) {
     /**
     t.sort(function (a, b) {
       switch(true){
-      case (bitCount(a.value) > bitCount(b.value)): { return -1; }
-      case (bitCount(a.value) < bitCount(b.value)): { return  1; }
+        case (a.id > b.id): return -1;
+        case (a.id < b.id): return  1;
       default:
-        if (a.value > b.value) { return -1; }
-        if (a.value < b.value) { return  1; }
+        if(bitCount(a.value) > bitCount(b.value)){ return -1; }
+        if(bitCount(a.value) < bitCount(b.value)){ return  1; }
         return  0;
       }
     });
     */
     let t1 = [];
     t.forEach((item)=>{
-      if(typeof t1[bitCount(item.value)] == 'undefined'){
-        t1[bitCount(item.value)] = [];
+      if(typeof t1[bitCount(item.id)] == 'undefined'){
+        t1[bitCount(item.id)] = [];
       }
-      t1[bitCount(item.value)].push(item);
+      t1[bitCount(item.id)].push(item);
     });
     console.log(225,t, t1); 
     t1.forEach((bits)=>{
@@ -325,7 +325,7 @@ let APP = (function(init) {
       }
     });
     console.log(225,t, t1, t2); 
-   _showDiagSetList(_themeDiagSetList(t));
+   _showDiagSetList(_themeDiagSetList(t2));
   };
 
   const _cmdClear = function (ev) { };
