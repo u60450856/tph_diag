@@ -319,11 +319,12 @@ let APP = (function(init) {
                 });
           });
     let t2 = [];
-    console.log(323,t1); 
-    t1.map((bits)=>{
-      for (let i=0;i<=bits.length;i++){
-        t2.push(bits[i]);
-      }
+    console.log(323,t1);
+    Object.keys(t1) 
+          .map((bits)=>{
+            for (let i=0;i<=t1[bits].length;i++){
+              t2.push(t1[bits][i]);
+          }
     });
     console.log(225,t, t1, t2); 
    _showDiagSetList(_themeDiagSetList(t2));
