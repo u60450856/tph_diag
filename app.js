@@ -313,8 +313,8 @@ let APP = (function(init) {
     Object.keys(t1)
           .forEach((bits)=>{
                 t1[bits].sort((a, b)=>{
-                  if (bitCount(a.value) < bitCount(b.value)){ return -1; }
-                  if (bitCount(a.value) > bitCount(b.value)){ return  1; }
+                  if (a.value) < b.value){ return -1; }
+                  if (a.value) > b.value){ return  1; }
                   return  0;
                 });
           });
