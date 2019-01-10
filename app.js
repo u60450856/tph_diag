@@ -282,12 +282,12 @@ let APP = (function(init) {
     t=t.filter((item)=>((objDiagRooms.GP & item.id)
                         && !(objDiagRooms.TREAT & item.id)
                         //&&(objDiagRooms.WARD & item.id)
-                        && !(objDiagRooms.PSY & item.id)
+                        //&& !(objDiagRooms.PSY & item.id)
                         && !(objDiagRooms.DNA & item.id)
                         && !(objDiagRooms.GP2 & item.id)
                        )
               );
-    t=t.filter((item)=>(item.value>=0.4));
+    t=t.filter((item)=>(item.value>=0.35));
     //sortDiagsSets()
     /**
     t.sort(function (a, b) {
